@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DNA Microscopy Lab</title>
+    <title>Weinstein Lab @ UChicago - DNA Technologies for the Next Generation of Biology</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -27,69 +27,95 @@
             font-style: italic;
             color: #7f8c8d;
         }
-        .example {
+        .content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .main-content {
+            flex: 2;
+            padding-right: 20px;
+        }
+        .sidebar {
+            flex: 1;
             background-color: #f2f2f2;
             padding: 15px;
             border-radius: 5px;
-            margin: 20px 0;
-        }
-        .highlight {
-            font-weight: bold;
-            color: #e74c3c;
         }
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 20px auto;
+            margin: 20px 0;
         }
-        .links {
-            margin-top: 30px;
+        .publication-list {
+            list-style-type: none;
+            padding-left: 0;
         }
-        .links a {
-            color: #3498db;
+        .publication-list li {
+            margin-bottom: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
             text-decoration: none;
-            margin-right: 15px;
-        }
-        .links a:hover {
-            text-decoration: underline;
+            color: #3498db;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>DNA Microscopy Lab</h1>
+        <h1>Weinstein Lab @ UChicago</h1>
+        <p>DNA Technologies for the Next Generation of Biology</p>
+        <nav>
+            <ul>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#news">News & Media</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <p class="intro"><span class="highlight">U</span>nanticipated technologies can blossom from seemingly unrelated developments. Solid-state quantum theory gave us the transistor; the economics of video-gaming gave us scaling in GPU production which, in turn, precipitated the achievability of modern AI. In 2019, we demonstrated the capacity for the newest generation of DNA sequencing methods to do something qualitatively similar for the way we probe living systems.</p>
+    <div class="content">
+        <div class="main-content">
+            <section id="research">
+                <h2>Research</h2>
+                <p class="intro"><strong>U</strong>nanticipated technologies can blossom from seemingly unrelated developments. Solid-state quantum theory gave us the transistor; the economics of video-gaming gave us scaling in GPU production which, in turn, precipitated the achievability of modern AI. In 2019, we demonstrated the capacity for the newest generation of DNA sequencing methods to do something qualitatively similar for the way we probe living systems.</p>
+                <img src="https://i0.wp.com/wlab.bio/wp-content/uploads/2023/08/zfish_gif.gif?w=621&ssl=1" alt="Zebrafish embryo visualization">
+                <p>Above: A 24-hour post-fertilization zebrafish embryo (right) imaged from the "inside-out", complete with nucleotide-level genomic detail (each of the 3.8 million points displayed is an individual RNA or DNA molecule). Assembled from a stand-alone volumetric DNA microscopy reaction of specimen on the left (scale bar 200um).</p>
+                <h3>DNA Microscopy</h3>
+                <p>DNA microscopy achieves this for biomolecules, instead of people. In short, in DNA microscopy, rather than using a large apparatus to zero-in on specific locations within the sample, we deploy a massive mix of random, artificial DNA molecules, that give each biomolecule its own unique molecular identity (a molecular IP address).</p>
+                <img src="https://i0.wp.com/wlab.bio/wp-content/uploads/2023/08/cellcover.png?w=530&ssl=1" alt="DNA Microscopy Visualization">
+                <p>We then turn these molecules into a massive intercommunicating network that goes to work encoding molecular proximities across the specimen (in cells or tissue) into brand new DNA sequences. Reading these proximities out by high-throughput DNA sequencing, and applying advances in numerical computing, we can infer an image of the original sample.</p>
+            </section>
 
-    <div class="example">
-        <h2>A Simple Example</h2>
-        <p>Let's say that you want to map the locations of every person on the surface of the earth. There are two ways you can imagine approaching this problem:</p>
-        <ol>
-            <li>You can send up a satellite around the earth and take photographs.</li>
-            <li>You can look at the Bluetooth pings between individuals' mobile phones. If you record enough of those pings, you can reconstruct everyone's relative positions without prior knowledge (or a map).</li>
-        </ol>
+            <section id="publications">
+                <h2>Publications</h2>
+                <ul class="publication-list">
+                    <li>Qian N, Weinstein JA. "Volumetric imaging of an intact organism by a distributed molecular network." <strong><em>bioRxiv.</em></strong> 2023 Aug 14. (<a href="https://www.biorxiv.org/content/10.1101/2023.08.11.553025v1">pre-print</a>)</li>
+                    <li>Weinstein JA, Regev A, Zhang F. "DNA microscopy: Optics-free spatio-genetic imaging by a stand-alone chemical reaction." <em><strong>Cell</strong></em>. 2019 Jun 27. (<a href="https://www.cell.com/cell/fulltext/S0092-8674(19)30547-1">paper</a>, <a href="https://www.biorxiv.org/content/10.1101/471219v1">pre-print</a>)</li>
+                    <li>Vollmers C, Sit RV, Weinstein JA, Dekker CL, Quake SR. "Genetic measurement of memory B-cell recall using antibody repertoire sequencing." <i><strong>Proc Natl Acad Sci USA</strong></i>. 2013 Jul 29. (<a href="https://www.pnas.org/content/110/33/13463">paper</a>)</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="sidebar">
+            <h3>Latest News</h3>
+            <p>Our latest research on volumetric imaging using DNA microscopy has been published as a pre-print. <a href="https://www.biorxiv.org/content/10.1101/2023.08.11.553025v1">Read more</a></p>
+            <h3>Contact Us</h3>
+            <p>We have open positions. <a href="#contact">Contact us!</a></p>
+        </div>
     </div>
 
-    <h2>What is DNA Microscopy?</h2>
-    <p><span class="highlight">DNA microscopy</span> achieves this for biomolecules, instead of people. In short, in DNA microscopy, rather than using a large apparatus to zero-in on specific locations within the sample, we deploy a massive mix of random, artificial DNA molecules, that give each biomolecule its own unique molecular identity (a molecular IP address).</p>
-
-    <p>We then turn these molecules into a massive intercommunicating network that goes to work encoding molecular proximities across the specimen (in cells or tissue) into brand new DNA sequences. Reading these proximities out by high-throughput DNA sequencing, and applying advances in numerical computing, we can infer an image of the original sample (similar to the mobile phone positions in the original example).</p>
-
-    <h2>Our Progress</h2>
-    <p>In 2019, we demonstrated this for the first time in two-dimensions:</p>
-    <img src="/api/placeholder/600/400" alt="2D DNA Microscopy Demonstration">
-
-    <p>And we are now applying this in three-dimensions to whole, intact organisms:</p>
-    <img src="/api/placeholder/600/400" alt="3D DNA Microscopy Application">
-
-    <div class="links">
-        <h2>Want to learn more?</h2>
-        <a href="#">Read the 2019 paper</a>
-        <a href="#">Read the 2023 paper</a>
-        <a href="#">Watch a seminar</a>
-        <a href="#">Browse press coverage</a>
-    </div>
+    <footer>
+        <p>&copy; 2023 Weinstein Lab at the University of Chicago</p>
+    </footer>
 </body>
 </html>
