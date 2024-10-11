@@ -17,11 +17,8 @@
             text-align: center;
             margin-bottom: 30px;
         }
-        h1 {
+        h1, h2, h3 {
             color: #2c3e50;
-        }
-        h2 {
-            color: #3498db;
         }
         .intro {
             font-style: italic;
@@ -47,11 +44,11 @@
             display: block;
             margin: 20px 0;
         }
-        .publication-list {
+        .publication-list, .news-list {
             list-style-type: none;
             padding-left: 0;
         }
-        .publication-list li {
+        .publication-list li, .news-list li {
             margin-bottom: 10px;
         }
         nav ul {
@@ -66,6 +63,22 @@
         nav ul li a {
             text-decoration: none;
             color: #3498db;
+        }
+        .more-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -103,6 +116,31 @@
                     <li>Weinstein JA, Regev A, Zhang F. "DNA microscopy: Optics-free spatio-genetic imaging by a stand-alone chemical reaction." <em><strong>Cell</strong></em>. 2019 Jun 27. (<a href="https://www.cell.com/cell/fulltext/S0092-8674(19)30547-1">paper</a>, <a href="https://www.biorxiv.org/content/10.1101/471219v1">pre-print</a>)</li>
                     <li>Vollmers C, Sit RV, Weinstein JA, Dekker CL, Quake SR. "Genetic measurement of memory B-cell recall using antibody repertoire sequencing." <i><strong>Proc Natl Acad Sci USA</strong></i>. 2013 Jul 29. (<a href="https://www.pnas.org/content/110/33/13463">paper</a>)</li>
                 </ul>
+                <button class="more-button" onclick="toggleMore('publications')">More Publications</button>
+                <ul id="more-publications" class="publication-list hidden">
+                    <li>Hsu PD, Scott DA, Weinstein JA, et al. "DNA targeting specificity of RNA-guided Cas9 nucleases." <i><strong>Nat Biotech</strong></i>. 2013 Jul 21. (<a href="https://www.nature.com/articles/nbt.2647">paper</a>)</li>
+                    <li>Weinstein JA, Zeng X, Chien YC, Quake SR. "Correlation of gene expression and genome mutation in single B-cells." <i><strong>PLoS ONE</strong></i>. 2013 Jun 28. (<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0067624">paper</a>)</li>
+                    <li>Jiang N, He J, Weinstein JA, et al. "Lineage structure of the human antibody repertoire in response to influenza vaccination." <i><strong>Sci Transl Med</strong></i>. 2013 Feb 6. (<a href="https://stm.sciencemag.org/content/5/171/171ra19.long">paper</a>)</li>
+                    <li>Jiang N, Weinstein JA, et al. "Determinism and stochasticity during maturation of the zebrafish antibody repertoire." <i><strong>Proc Natl Acad Sci USA</strong></i>. 2011 Mar 29. (<a href="http://www.pnas.org/content/108/13/5348">paper</a>)</li>
+                    <li>Weinstein JA, Jiang N, et al. "High-throughput sequencing of the zebrafish antibody repertoire." <i><strong>Science</strong></i>. 2009 May 8. (<a href="https://science.sciencemag.org/content/324/5928/807.long">paper</a>)</li>
+                </ul>
+            </section>
+
+            <section id="news">
+                <h2>News & Media</h2>
+                <ul class="news-list">
+                    <li><a href="https://www.damonrunyon.org/news/entries/6071">2021 Damon Runyon Innovation Award Announcement (January 11, 2021)</a></li>
+                    <li><a href="https://www.moore.org/article-detail?newsUrlName=gordon-and-betty-moore-foundation-announces-2020-moore-inventor-fellows">2020 Moore Inventor Fellow Announcement (September 16, 2020)</a></li>
+                    <li><a href="https://www.discovermagazine.com/health/with-a-new-microscope-researchers-may-be-able-to-see-dna-activity">Discover Magazine (December 21, 2019)</a> - #33 in "Top science stories of 2019"</li>
+                </ul>
+                <button class="more-button" onclick="toggleMore('news')">More News</button>
+                <ul id="more-news" class="news-list hidden">
+                    <li><a href="https://www.nytimes.com/2019/06/20/science/microscopes-cell-biology-dna.html">New York Times (June 20, 2019)</a> - "DNA Microscope Sees 'Through the Eyes of the Cell'"</li>
+                    <li><a href="https://www.hhmi.org/news/dna-microscopy-offers-entirely-new-way-to-image-cells">HHMI News (June 20, 2019)</a> - "'DNA Microscopy' Offers Entirely New Way to Image Cells"</li>
+                    <li><a href="https://www.statnews.com/2019/06/20/dna-microscope-shows-cells-genetic-material">STAT News (June 20, 2019)</a> - "A new 'DNA microscope' peers deep inside living cells"</li>
+                    <li><a href="https://www.youtube.com/watch?v=hrqU2RP_9rc">Models, Inference, and Algorithms Seminar (February 2, 2019)</a> - "Optics-free spatio-genetic imaging with DNA microscopy"</li>
+                    <li><a href="https://directorsblog.nih.gov/2013/02/12/taking-a-snapshot-of-the-human-immune-system/">NIH Director's Blog (February 12, 2013)</a> - "Taking a Snapshot of the Human Immune System"</li>
+                </ul>
             </section>
         </div>
 
@@ -117,5 +155,19 @@
     <footer>
         <p>&copy; 2023 Weinstein Lab at the University of Chicago</p>
     </footer>
+
+    <script>
+        function toggleMore(section) {
+            var moreContent = document.getElementById('more-' + section);
+            var button = document.querySelector('button[onclick="toggleMore(\'' + section + '\')"]');
+            if (moreContent.classList.contains('hidden')) {
+                moreContent.classList.remove('hidden');
+                button.textContent = 'Less ' + section.charAt(0).toUpperCase() + section.slice(1);
+            } else {
+                moreContent.classList.add('hidden');
+                button.textContent = 'More ' + section.charAt(0).toUpperCase() + section.slice(1);
+            }
+        }
+    </script>
 </body>
 </html>
