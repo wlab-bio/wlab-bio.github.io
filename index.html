@@ -116,8 +116,11 @@
             transition: transform 0.3s ease;
         }
 
-        img:hover {
-            transform: scale(1.02);
+        /* Specific style for cellcover.jpg to make it half-width */
+        .half-width {
+            width: 50%;
+            margin: 20px auto;
+            display: block;
         }
 
         .publication-list, .news-list {
@@ -209,7 +212,7 @@
                 <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#news">News & Media</a></li>
-                <li><a href="https://github.com/wlab-bio" target="_blank" aria-label="Weinstein Lab GitHub Page">GitHub</a></li>
+                <!-- GitHub link removed from navigation bar -->
             </ul>
         </nav>
     </header>
@@ -223,7 +226,7 @@
                 <p>Above: A 24-hour post-fertilization zebrafish embryo (right) imaged from the "inside-out", complete with nucleotide-level genomic detail (each of the 3.8 million points displayed is an individual RNA or DNA molecule). Assembled from a stand-alone volumetric DNA microscopy reaction of specimen on the left (scale bar 200um).</p>
                 <h3>DNA Microscopy</h3>
                 <p>DNA microscopy achieves this for biomolecules, instead of people. In short, in DNA microscopy, rather than using a large apparatus to zero in on specific locations within the sample, we deploy a massive mix of random, artificial DNA molecules, that give each biomolecule its own unique molecular identity (a molecular IP address).</p>
-                <img src="cellcover.jpg" alt="DNA Microscopy Visualization">
+                <img src="cellcover.jpg" alt="DNA Microscopy Visualization" class="half-width"> <!-- Applied half-width class -->
                 <p>We then turn these molecules into a massive intercommunicating network that goes to work encoding molecular proximities across the specimen (in cells or tissue) into brand new DNA sequences. Reading these proximities out by high-throughput DNA sequencing, and applying advances in numerical computing, we can infer an image of the original sample.</p>
             </section>
 
@@ -268,12 +271,9 @@
             <p>Our latest research on volumetric imaging using DNA microscopy has been published as a pre-print. <a href="https://www.biorxiv.org/content/10.1101/2023.08.11.553025v1" target="_blank" rel="noopener">Read more</a></p>
             <h3>Contact Us</h3>
             <p>We have open positions. <a href="mailto:jaweinst@uchicago.edu">Contact us!</a></p>
-            <!-- Social Media Links -->
+            <!-- Updated "Connect with Us" section -->
             <h3>Connect with Us</h3>
-            <p>
-                <a href="https://twitter.com/wlab_bio" target="_blank" rel="noopener" aria-label="Weinstein Lab Twitter"><img src="icons/twitter.svg" alt="Twitter" width="24" height="24"></a>
-                <a href="https://linkedin.com/company/wlab-bio" target="_blank" rel="noopener" aria-label="Weinstein Lab LinkedIn"><img src="icons/linkedin.svg" alt="LinkedIn" width="24" height="24"></a>
-            </p>
+            <p>Follow us on Twitter: <a href="https://twitter.com/jaweinst" target="_blank" rel="noopener">@jaweinst</a></p>
         </div>
     </div>
 
