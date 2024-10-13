@@ -4,66 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weinstein Lab @ UChicago - DNA Technologies for the Next Generation of Biology</title>
+    <meta name="description" content="Weinstein Lab at the University of Chicago focuses on DNA Technologies for advancing the next generation of biology. Explore our research, publications, and latest news.">
+    <meta name="keywords" content="Weinstein Lab, DNA Microscopy, Biotechnology, University of Chicago, Genomics, Bioinformatics">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts Integration -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        /* Reset some default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 1000px;
+            background-color: #f9f9f9;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
+
         h1, h2, h3 {
             color: #2c3e50;
+            font-family: 'Roboto', sans-serif;
         }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e1e1e1;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
         .intro {
             font-style: italic;
             color: #7f8c8d;
+            margin-bottom: 20px;
         }
-        .content {
-            display: flex;
-            justify-content: space-between;
-        }
-        .main-content {
-            flex: 2;
-            padding-right: 20px;
-        }
-        .sidebar {
-            flex: 1;
-            background-color: #f2f2f2;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px 0;
-        }
-        .publication-list, .news-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .publication-list li, .news-list li {
-            margin-bottom: 10px;
-        }
+
         nav ul {
             list-style-type: none;
             padding: 0;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
+
         nav ul li {
-            margin: 0 10px;
+            margin: 0;
         }
+
         nav ul li a {
             text-decoration: none;
             color: #3498db;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
+
+        nav ul li a:hover {
+            color: #2c3e50;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .main-content {
+            flex: 3;
+            min-width: 280px;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 250px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        .publication-list, .news-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .publication-list li, .news-list li {
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .publication-list li a, .news-list li a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .publication-list li a:hover, .news-list li a:hover {
+            color: #2c3e50;
+        }
+
         .more-button {
             background-color: #3498db;
             color: white;
@@ -73,17 +149,54 @@
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            margin: 4px 2px;
+            margin: 10px 0;
             cursor: pointer;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
+
+        .more-button:hover {
+            background-color: #2980b9;
+        }
+
         .hidden {
             display: none;
         }
+
         .lab-photo {
             width: 100%;
             border-radius: 5px;
             margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e1e1;
+            color: #7f8c8d;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #2c3e50;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                order: -1;
+            }
         }
     </style>
 </head>
@@ -96,6 +209,7 @@
                 <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#news">News & Media</a></li>
+                <li><a href="https://github.com/wlab-bio" target="_blank" aria-label="Weinstein Lab GitHub Page">GitHub</a></li>
             </ul>
         </nav>
     </header>
@@ -108,7 +222,7 @@
                 <img src="zfish_gif.gif" alt="Zebrafish embryo visualization">
                 <p>Above: A 24-hour post-fertilization zebrafish embryo (right) imaged from the "inside-out", complete with nucleotide-level genomic detail (each of the 3.8 million points displayed is an individual RNA or DNA molecule). Assembled from a stand-alone volumetric DNA microscopy reaction of specimen on the left (scale bar 200um).</p>
                 <h3>DNA Microscopy</h3>
-                <p>DNA microscopy achieves this for biomolecules, instead of people. In short, in DNA microscopy, rather than using a large apparatus to zero-in on specific locations within the sample, we deploy a massive mix of random, artificial DNA molecules, that give each biomolecule its own unique molecular identity (a molecular IP address).</p>
+                <p>DNA microscopy achieves this for biomolecules, instead of people. In short, in DNA microscopy, rather than using a large apparatus to zero in on specific locations within the sample, we deploy a massive mix of random, artificial DNA molecules, that give each biomolecule its own unique molecular identity (a molecular IP address).</p>
                 <img src="cellcover.jpg" alt="DNA Microscopy Visualization">
                 <p>We then turn these molecules into a massive intercommunicating network that goes to work encoding molecular proximities across the specimen (in cells or tissue) into brand new DNA sequences. Reading these proximities out by high-throughput DNA sequencing, and applying advances in numerical computing, we can infer an image of the original sample.</p>
             </section>
@@ -116,34 +230,34 @@
             <section id="publications">
                 <h2>Publications</h2>
                 <ul class="publication-list">
-                    <li>Qian N, Weinstein JA. "Volumetric imaging of an intact organism by a distributed molecular network." <strong><em>bioRxiv.</em></strong> 2023 Aug 14. (<a href="https://www.biorxiv.org/content/10.1101/2023.08.11.553025v1">pre-print</a>)</li>
-                    <li>Weinstein JA, Regev A, Zhang F. "DNA microscopy: Optics-free spatio-genetic imaging by a stand-alone chemical reaction." <em><strong>Cell</strong></em>. 2019 Jun 27. (<a href="https://www.cell.com/cell/fulltext/S0092-8674(19)30547-1">paper</a>, <a href="https://www.biorxiv.org/content/10.1101/471219v1">pre-print</a>)</li>
-                    <li>Vollmers C, Sit RV, Weinstein JA, Dekker CL, Quake SR. "Genetic measurement of memory B-cell recall using antibody repertoire sequencing." <i><strong>Proc Natl Acad Sci USA</strong></i>. 2013 Jul 29. (<a href="https://www.pnas.org/content/110/33/13463">paper</a>)</li>
+                    <li>Qian N, Weinstein JA. "Volumetric imaging of an intact organism by a distributed molecular network." <strong><em>bioRxiv.</em></strong> 2023 Aug 14. (<a href="https://www.biorxiv.org/content/10.1101/2023.08.11.553025v1" target="_blank" rel="noopener">pre-print</a>)</li>
+                    <li>Weinstein JA, Regev A, Zhang F. "DNA microscopy: Optics-free spatio-genetic imaging by a stand-alone chemical reaction." <em><strong>Cell</strong></em>. 2019 Jun 27. (<a href="https://www.cell.com/cell/fulltext/S0092-8674(19)30547-1" target="_blank" rel="noopener">paper</a>, <a href="https://www.biorxiv.org/content/10.1101/471219v1" target="_blank" rel="noopener">pre-print</a>)</li>
+                    <li>Vollmers C, Sit RV, Weinstein JA, Dekker CL, Quake SR. "Genetic measurement of memory B-cell recall using antibody repertoire sequencing." <i><strong>Proc Natl Acad Sci USA</strong></i>. 2013 Jul 29. (<a href="https://www.pnas.org/content/110/33/13463" target="_blank" rel="noopener">paper</a>)</li>
                 </ul>
                 <button class="more-button" onclick="toggleMore('publications')">More Publications</button>
                 <ul id="more-publications" class="publication-list hidden">
-                    <li>Hsu PD, Scott DA, Weinstein JA, et al. "DNA targeting specificity of RNA-guided Cas9 nucleases." <i><strong>Nat Biotech</strong></i>. 2013 Jul 21. (<a href="https://www.nature.com/articles/nbt.2647">paper</a>)</li>
-                    <li>Weinstein JA, Zeng X, Chien YC, Quake SR. "Correlation of gene expression and genome mutation in single B-cells." <i><strong>PLoS ONE</strong></i>. 2013 Jun 28. (<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0067624">paper</a>)</li>
-                    <li>Jiang N, He J, Weinstein JA, et al. "Lineage structure of the human antibody repertoire in response to influenza vaccination." <i><strong>Sci Transl Med</strong></i>. 2013 Feb 6. (<a href="https://stm.sciencemag.org/content/5/171/171ra19.long">paper</a>)</li>
-                    <li>Jiang N, Weinstein JA, et al. "Determinism and stochasticity during maturation of the zebrafish antibody repertoire." <i><strong>Proc Natl Acad Sci USA</strong></i>. 2011 Mar 29. (<a href="http://www.pnas.org/content/108/13/5348">paper</a>)</li>
-                    <li>Weinstein JA, Jiang N, et al. "High-throughput sequencing of the zebrafish antibody repertoire." <i><strong>Science</strong></i>. 2009 May 8. (<a href="https://science.sciencemag.org/content/324/5928/807.long">paper</a>)</li>
+                    <li>Hsu PD, Scott DA, Weinstein JA, et al. "DNA targeting specificity of RNA-guided Cas9 nucleases." <i><strong>Nat Biotech</strong></i>. 2013 Jul 21. (<a href="https://www.nature.com/articles/nbt.2647" target="_blank" rel="noopener">paper</a>)</li>
+                    <li>Weinstein JA, Zeng X, Chien YC, Quake SR. "Correlation of gene expression and genome mutation in single B-cells." <i><strong>PLoS ONE</strong></i>. 2013 Jun 28. (<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0067624" target="_blank" rel="noopener">paper</a>)</li>
+                    <li>Jiang N, He J, Weinstein JA, et al. "Lineage structure of the human antibody repertoire in response to influenza vaccination." <i><strong>Sci Transl Med</strong></i>. 2013 Feb 6. (<a href="https://stm.sciencemag.org/content/5/171/171ra19.long" target="_blank" rel="noopener">paper</a>)</li>
+                    <li>Jiang N, Weinstein JA, et al. "Determinism and stochasticity during maturation of the zebrafish antibody repertoire." <i><strong>Proc Natl Acad Sci USA</strong></i>. 2011 Mar 29. (<a href="http://www.pnas.org/content/108/13/5348" target="_blank" rel="noopener">paper</a>)</li>
+                    <li>Weinstein JA, Jiang N, et al. "High-throughput sequencing of the zebrafish antibody repertoire." <i><strong>Science</strong></i>. 2009 May 8. (<a href="https://science.sciencemag.org/content/324/5928/807.long" target="_blank" rel="noopener">paper</a>)</li>
                 </ul>
             </section>
 
             <section id="news">
                 <h2>News & Media</h2>
                 <ul class="news-list">
-                    <li><a href="https://www.damonrunyon.org/news/entries/6071">2021 Damon Runyon Innovation Award Announcement (January 11, 2021)</a></li>
-                    <li><a href="https://www.moore.org/article-detail?newsUrlName=gordon-and-betty-moore-foundation-announces-2020-moore-inventor-fellows">2020 Moore Inventor Fellow Announcement (September 16, 2020)</a></li>
-                    <li><a href="https://www.discovermagazine.com/health/with-a-new-microscope-researchers-may-be-able-to-see-dna-activity">Discover Magazine (December 21, 2019)</a> - #33 in "Top science stories of 2019"</li>
+                    <li><a href="https://www.damonrunyon.org/news/entries/6071" target="_blank" rel="noopener">2021 Damon Runyon Innovation Award Announcement (January 11, 2021)</a></li>
+                    <li><a href="https://www.moore.org/article-detail?newsUrlName=gordon-and-betty-moore-foundation-announces-2020-moore-inventor-fellows" target="_blank" rel="noopener">2020 Moore Inventor Fellow Announcement (September 16, 2020)</a></li>
+                    <li><a href="https://www.discovermagazine.com/health/with-a-new-microscope-researchers-may-be-able-to-see-dna-activity" target="_blank" rel="noopener">Discover Magazine (December 21, 2019)</a> - #33 in "Top science stories of 2019"</li>
                 </ul>
                 <button class="more-button" onclick="toggleMore('news')">More News</button>
                 <ul id="more-news" class="news-list hidden">
-                    <li><a href="https://www.nytimes.com/2019/06/20/science/microscopes-cell-biology-dna.html">New York Times (June 20, 2019)</a> - "DNA Microscope Sees 'Through the Eyes of the Cell'"</li>
-                    <li><a href="https://www.hhmi.org/news/dna-microscopy-offers-entirely-new-way-to-image-cells">HHMI News (June 20, 2019)</a> - "'DNA Microscopy' Offers Entirely New Way to Image Cells"</li>
-                    <li><a href="https://www.statnews.com/2019/06/20/dna-microscope-shows-cells-genetic-material">STAT News (June 20, 2019)</a> - "A new 'DNA microscope' peers deep inside living cells"</li>
-                    <li><a href="https://www.youtube.com/watch?v=hrqU2RP_9rc">Models, Inference, and Algorithms Seminar (February 2, 2019)</a> - "Optics-free spatio-genetic imaging with DNA microscopy"</li>
-                    <li><a href="https://directorsblog.nih.gov/2013/02/12/taking-a-snapshot-of-the-human-immune-system/">NIH Director's Blog (February 12, 2013)</a> - "Taking a Snapshot of the Human Immune System"</li>
+                    <li><a href="https://www.nytimes.com/2019/06/20/science/microscopes-cell-biology-dna.html" target="_blank" rel="noopener">New York Times (June 20, 2019)</a> - "DNA Microscope Sees 'Through the Eyes of the Cell'"</li>
+                    <li><a href="https://www.hhmi.org/news/dna-microscopy-offers-entirely-new-way-to-image-cells" target="_blank" rel="noopener">HHMI News (June 20, 2019)</a> - "'DNA Microscopy' Offers Entirely New Way to Image Cells"</li>
+                    <li><a href="https://www.statnews.com/2019/06/20/dna-microscope-shows-cells-genetic-material" target="_blank" rel="noopener">STAT News (June 20, 2019)</a> - "A new 'DNA microscope' peers deep inside living cells"</li>
+                    <li><a href="https://www.youtube.com/watch?v=hrqU2RP_9rc" target="_blank" rel="noopener">Models, Inference, and Algorithms Seminar (February 2, 2019)</a> - "Optics-free spatio-genetic imaging with DNA microscopy"</li>
+                    <li><a href="https://directorsblog.nih.gov/2013/02/12/taking-a-snapshot-of-the-human-immune-system/" target="_blank" rel="noopener">NIH Director's Blog (February 12, 2013)</a> - "Taking a Snapshot of the Human Immune System"</li>
                 </ul>
             </section>
         </div>
@@ -151,14 +265,21 @@
         <div class="sidebar">
             <img src="lab_chicago.jpg" alt="Weinstein Lab" class="lab-photo">
             <h3>Latest News</h3>
-            <p>Our latest research on volumetric imaging using DNA microscopy has been published as a pre-print. <a href="https://www.biorxiv.org/content/10.1101/2023.08.11.553025v1">Read more</a></p>
+            <p>Our latest research on volumetric imaging using DNA microscopy has been published as a pre-print. <a href="https://www.biorxiv.org/content/10.1101/2023.08.11.553025v1" target="_blank" rel="noopener">Read more</a></p>
             <h3>Contact Us</h3>
             <p>We have open positions. <a href="mailto:jaweinst@uchicago.edu">Contact us!</a></p>
+            <!-- Social Media Links -->
+            <h3>Connect with Us</h3>
+            <p>
+                <a href="https://twitter.com/wlab_bio" target="_blank" rel="noopener" aria-label="Weinstein Lab Twitter"><img src="icons/twitter.svg" alt="Twitter" width="24" height="24"></a>
+                <a href="https://linkedin.com/company/wlab-bio" target="_blank" rel="noopener" aria-label="Weinstein Lab LinkedIn"><img src="icons/linkedin.svg" alt="LinkedIn" width="24" height="24"></a>
+            </p>
         </div>
     </div>
 
     <footer>
         <p>&copy; 2023 Weinstein Lab at the University of Chicago</p>
+        <p><a href="https://github.com/wlab-bio" target="_blank" rel="noopener">GitHub</a></p>
     </footer>
 
     <script>
@@ -167,11 +288,15 @@
             var button = document.querySelector('button[onclick="toggleMore(\'' + section + '\')"]');
             if (moreContent.classList.contains('hidden')) {
                 moreContent.classList.remove('hidden');
-                button.textContent = 'Less ' + section.charAt(0).toUpperCase() + section.slice(1);
+                button.textContent = 'Less ' + capitalizeFirstLetter(section);
             } else {
                 moreContent.classList.add('hidden');
-                button.textContent = 'More ' + section.charAt(0).toUpperCase() + section.slice(1);
+                button.textContent = 'More ' + capitalizeFirstLetter(section);
             }
+        }
+
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
         }
     </script>
 </body>
