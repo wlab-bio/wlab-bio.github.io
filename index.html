@@ -134,6 +134,14 @@
             display: block;
         }
 
+        /* Logo styling */
+        .logo {
+            max-width: 400px;
+            height: auto;
+            margin: 0 auto 5px;
+            border-radius: 0; /* Remove border radius for logo */
+        }
+
         .publication-list, .news-list {
             list-style-type: none;
             padding-left: 0;
@@ -215,12 +223,17 @@
             .half-width {
                 width: 100%;
             }
+            
+            .logo {
+                max-width: 280px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Weinstein Lab @ UChicago</h1>
+        <img src="transp_logo.png" alt="Weinstein Lab Logo" class="logo">
+        <p>@ UChicago</p>
         <p>DNA Technologies for the Next Generation of Precision Biology</p>
         <nav>
             <ul>
