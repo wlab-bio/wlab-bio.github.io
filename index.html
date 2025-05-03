@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weinstein Lab @ UChicago - DNA Technologies for the Next Generation of Precision Biology</title>
-    <meta name="description" content="Weinstein Lab at the University of Chicago focuses on DNA Technologies for advancing the next generation of precision biology. Explore our research, publications, and latest news.">
+    <meta name="description" content="Weinstein Lab at the University of Chicago focuses on DNA technologies such as volumetric DNA microscopy for advancing the next generation of precision biology. Explore our research, publications, and latest news.">
     <meta name="keywords" content="Weinstein Lab, DNA Microscopy, Biotechnology, University of Chicago, Genomics, Bioinformatics">
     
     <!-- Google Fonts Integration -->
@@ -89,7 +89,7 @@
 
         nav ul li a {
             text-decoration: none;
-            color: #3498db;
+            color: #2a79c9;
             font-weight: 600;
             transition: color 0.3s ease;
         }
@@ -136,7 +136,7 @@
 
         /* Logo styling */
         .logo {
-            max-width: 250px;
+            max-width: 300px;
             height: auto;
             margin: 0 auto 5px;
             border-radius: 0; /* Remove border radius for logo */
@@ -153,7 +153,7 @@
         }
 
         .publication-list li a, .news-list li a {
-            color: #3498db;
+            color: #2a79c9;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -163,7 +163,7 @@
         }
 
         .more-button {
-            background-color: #3498db;
+            background-color: #2a79c9;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -178,7 +178,7 @@
         }
 
         .more-button:hover {
-            background-color: #2980b9;
+            background-color: #1c5a94;
         }
 
         .hidden {
@@ -201,7 +201,7 @@
         }
 
         footer a {
-            color: #3498db;
+            color: #2a79c9;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -233,8 +233,8 @@
 <body>
     <header>
         <img src="transp_logo.png" alt="Weinstein Lab Logo" class="logo">
-        <p>at the University of Chicago</p>
-        <p>DNA Technologies for the Next Generation of Precision Biology</p>
+        <p>@ UChicago</p>
+        <p>We invented DNA-encoded imaging for the next generation of precision biology</p>
         <nav>
             <ul>
                 <li><a href="#research">Research</a></li>
@@ -249,19 +249,24 @@
         <div class="main-content">
             <section id="research">
                 <h2>Research</h2>
-                <p class="intro"><strong>U</strong>nanticipated technologies can blossom from seemingly unrelated developments. Solid-state quantum theory gave us the transistor; the economics of video-gaming gave us scaling in GPU production which, in turn, precipitated the achievability of modern AI. In 2019, we demonstrated the capacity for the newest generation of DNA sequencing methods to do something qualitatively similar for the way we probe living systems.</p>
+                <p class="intro"><strong>We invented chemistry-first, optics-free imaging that turns molecules themselves into distributed sensors, giving us three-dimensional maps of genomes and transcriptomes inside intact organisms.</strong></p>
+                
+                <p>Unanticipated technologies can blossom from seemingly unrelated developments. Solid-state quantum theory gave us the transistor; the economics of video-gaming gave us scaling in GPU production which, in turn, precipitated the achievability of modern AI. In 2019 we showed, for the first time, that modern DNA sequencing could reconstruct two-dimensional molecular landscapes solely from newly synthesized DNA barcodes.</p>
                 
                 <p>Take the following simple example. Let's say that you want to map the locations of every person on the surface of the earth. There are two ways you can imagine approaching this problem. One is, you can send up a satellite around the earth and take photographs. Two is, you can look at the Bluetooth pings between individuals' mobile phones. If you record enough of those pings, you can reconstruct everyone's relative positions without prior knowledge (or a map). DNA microscopy achieves this for biomolecules, instead of people. In short, in DNA microscopy, rather than using a large apparatus to zero in on specific locations within the sample, we deploy a massive mix of random, artificial DNA molecules, that give each biomolecule its own unique molecular identity (a molecular IP address).</p>
                 
-                <img src="zfish_gif.gif" alt="Zebrafish embryo visualization" class="half-width">
-                <p>Above: A 24-hour post-fertilization zebrafish embryo imaged from the "inside-out", complete with nucleotide-level genomic detail (each of the 7 million points displayed is an individual RNA or DNA molecule). Scale bar is 25 diffusion-units.</p>
+                <h3>2025: From 2-D snapshots to full 3-D volumes</h3>
+                <p>In 2025 we extended DNA microscopy into true three-dimensional space, imaging an entire zebrafish embryo with ~10 million individually tagged molecules. Local positional uncertainty was 1–2 µm <strong>conditional on each molecule's nearest neighbors</strong>, enabling sub-cellular insights without optics.</p>
+                
+                <img src="zfish_gif.gif" alt="3-D reconstruction of a 24-hpf zebrafish embryo (~10 M molecules) rendered by volumetric DNA microscopy" class="half-width">
+                <p>Above: A 24-hour post-fertilization zebrafish embryo imaged from the "inside-out", complete with nucleotide-level genomic detail (each of the ~10 million points displayed is an individual RNA or DNA molecule). Scale bar = 25 diffusion-units (one diffusion-unit is the distance at which barcode connectivity drops to 1/e, ≈ a few microns in this specimen).</p>
                 
                 <h3>DNA Microscopy</h3>
-                <p>We then turn these molecules into a massive intercommunicating network that goes to work encoding molecular proximities across the specimen (in cells or tissue) into brand new DNA sequences. Reading these proximities out by high-throughput DNA sequencing, and applying advances in numerical computing, we can infer an image of the original sample (similar to the mobile phone positions in the original example).</p>
+                <p>Those uniquely indexed molecules <strong>self-assemble into</strong> an inter-communicating network that goes to work encoding molecular proximities across the specimen (in cells or tissue) into brand new DNA sequences. Reading these proximities out by high-throughput DNA sequencing, and applying advances in numerical computing, we can infer an image of the original sample (similar to the mobile phone positions in the original example).</p>
                 
-                <img src="cellcover.jpg" alt="DNA Microscopy Visualization" class="half-width">
+                <img src="cellcover.jpg" alt="Optics-free reconstruction of cellular architecture by DNA microscopy" class="half-width">
                 
-                <p>In 2019, we demonstrated this for the first time in two dimensions, showcasing the potential of DNA microscopy in providing high-resolution, spatially resolved genomic data without the need for traditional optical microscopy. In 2025 we demonstrated how an entire intact organism could be imaged the same way, by turning the entire structure into a massive network of communicating DNA barcodes.</p>
+                <p>In 2019, we demonstrated this for the first time in two dimensions, showcasing the potential of DNA microscopy in providing high-resolution, spatially resolved genomic data without the need for traditional optical microscopy. In 2025 we <strong>imaged a whole vertebrate embryo</strong> the same way, proving the concept scales from single layers to millimeter-scale volumes.</p>
             </section>
 
             <section id="publications">
@@ -273,7 +278,7 @@
                 </ul>
                 <button class="more-button" onclick="toggleMore('publications')">More Publications</button>
                 <ul id="more-publications" class="publication-list hidden">
-                    <li>Hsu PD, Scott DA, Weinstein JA, et al. "DNA targeting specificity of RNA-guided Cas9 nucleases." <i><strong>Nat Biotech</strong></i>. 2013 Jul 21. (<a href="https://www.nature.com/articles/nbt.2647" target="_blank" rel="noopener">paper</a>)</li>
+                    <li>Hsu PD, Scott DA, Weinstein JA, et al. "DNA targeting specificity of RNA-guided Cas9 nucleases." <i><strong>Nat Biotechnol</strong></i>. 2013 Jul 21. (<a href="https://www.nature.com/articles/nbt.2647" target="_blank" rel="noopener">paper</a>)</li>
                     <li>Weinstein JA, Zeng X, Chien YC, Quake SR. "Correlation of gene expression and genome mutation in single B-cells." <i><strong>PLoS ONE</strong></i>. 2013 Jun 28. (<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0067624" target="_blank" rel="noopener">paper</a>)</li>
                     <li>Jiang N, He J, Weinstein JA, et al. "Lineage structure of the human antibody repertoire in response to influenza vaccination." <i><strong>Sci Transl Med</strong></i>. 2013 Feb 6. (<a href="https://stm.sciencemag.org/content/5/171/171ra19.long" target="_blank" rel="noopener">paper</a>)</li>
                     <li>Jiang N, Weinstein JA, et al. "Determinism and stochasticity during maturation of the zebrafish antibody repertoire." <i><strong>Proc Natl Acad Sci USA</strong></i>. 2011 Mar 29. (<a href="http://www.pnas.org/content/108/13/5348" target="_blank" rel="noopener">paper</a>)</li>
@@ -283,17 +288,20 @@
 
             <section id="news">
                 <h2>News & Media</h2>
+                
+                <h3>In the Press</h3>
                 <ul class="news-list">
                     <li><a href="https://www.nature.com/articles/s41587-025-02640-w" target="_blank" rel="noopener">Volumetric imaging using a distributed molecular network (March 27, 2025)</a></li>
                     <li><a href="https://biologicalsciences.uchicago.edu/news/dna-microscope-creates-3d-images-organisms-inside-out" target="_blank" rel="noopener">DNA microscope creates 3D images of organisms from the inside out (March 27, 2025)</a></li>
                     <li><a href="https://www.damonrunyon.org/news/entries/6071" target="_blank" rel="noopener">2021 Damon Runyon Innovation Award Announcement (January 11, 2021)</a></li>
                     <li><a href="https://www.moore.org/article-detail?newsUrlName=gordon-and-betty-moore-foundation-announces-2020-moore-inventor-fellows" target="_blank" rel="noopener">2020 Moore Inventor Fellow Announcement (September 16, 2020)</a></li>
                     <li><a href="https://www.discovermagazine.com/health/with-a-new-microscope-researchers-may-be-able-to-see-dna-activity" target="_blank" rel="noopener">Discover Magazine (December 21, 2019)</a> - #33 in "Top science stories of 2019"</li>
-                </ul>
-                <button class="more-button" onclick="toggleMore('news')">More News</button>
-                <ul id="more-news" class="news-list hidden">
                     <li><a href="https://www.nytimes.com/2019/06/20/science/microscopes-cell-biology-dna.html" target="_blank" rel="noopener">New York Times (June 20, 2019)</a> - "DNA Microscope Sees 'Through the Eyes of the Cell'"</li>
                     <li><a href="https://www.hhmi.org/news/dna-microscopy-offers-entirely-new-way-to-image-cells" target="_blank" rel="noopener">HHMI News (June 20, 2019)</a> - "'DNA Microscopy' Offers Entirely New Way to Image Cells"</li>
+                </ul>
+                
+                <button class="more-button" onclick="toggleMore('news')">More News</button>
+                <ul id="more-news" class="news-list hidden">
                     <li><a href="https://www.statnews.com/2019/06/20/dna-microscope-shows-cells-genetic-material" target="_blank" rel="noopener">STAT News (June 20, 2019)</a> - "A new 'DNA microscope' peers deep inside living cells"</li>
                     <li><a href="https://www.youtube.com/watch?v=hrqU2RP_9rc" target="_blank" rel="noopener">Models, Inference, and Algorithms Seminar (February 2, 2019)</a> - "Optics-free spatio-genetic imaging with DNA microscopy"</li>
                     <li><a href="https://directorsblog.nih.gov/2013/02/12/taking-a-snapshot-of-the-human-immune-system/" target="_blank" rel="noopener">NIH Director's Blog (February 12, 2013)</a> - "Taking a Snapshot of the Human Immune System"</li>
@@ -303,7 +311,7 @@
 
         <aside class="sidebar">
             <h3>Latest News</h3>
-            <p>Our research on spatial transcriptomic imaging using volumetric DNA microscopy has been published in Nature Biotechnology. <a href="https://doi.org/10.1038/s41587-025-02613-z" target="_blank" rel="noopener">Read more</a></p>
+            <p>Our spatial transcriptomic imaging study <strong>was published</strong> in <em>Nature Biotechnology</em>. <a href="https://doi.org/10.1038/s41587-025-02613-z" target="_blank" rel="noopener">Read more</a></p>
             
             <img src="lab_chicago.jpg" alt="Weinstein Lab" class="lab-photo">
             <img src="lab_noodles.jpg" alt="Lab Noodles" class="lab-photo">
@@ -319,7 +327,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Weinstein Lab at the University of Chicago</p>
+        <p>&copy; 2025 Weinstein Lab • Pioneers of volumetric DNA microscopy</p>
         <p><a href="https://github.com/wlab-bio" target="_blank" rel="noopener">GitHub</a></p>
     </footer>
 
