@@ -1,3 +1,5 @@
+Is the following ok, or has it been over-edited?
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weinstein Lab @ UChicago - DNA Technologies for the Next Generation of Precision Biology</title>
     <meta name="description"
-          content="The Weinstein Lab develops volumetric and planar DNA microscopy  --  optics‑free, sequencing‑based platforms that map 3D morphology, transcript identity and gene‑expression patterns from single cells to whole organisms.">
+          content="The Weinstein Lab develops volumetric and planar DNA microscopy -- optics-free, sequencing-based platforms that map 3D morphology, transcript identity and gene-expression patterns from single cells to whole organisms.">
     <meta name="keywords" content="Weinstein Lab, DNA Microscopy, volumetric DNA microscopy, spatial transcriptomics, University of Chicago, Genomics, Bioinformatics, optics-free imaging">
     
     <!-- Google Fonts Integration -->
@@ -131,6 +133,12 @@
         /* Width utility classes */
         .w-50 {
             width: 50%;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .w-33 {
+            width: 33%;
             margin: 20px auto;
             display: block;
         }
@@ -254,7 +262,7 @@
                 order: -1;
             }
 
-            .w-50 {
+            .w-50, .w-33 {
                 width: 100%;
             }
             
@@ -283,19 +291,19 @@
         <div class="main-content">
             <section id="research">
                 <h2>Research</h2>
-                <p class="intro"><strong>U</strong>nanticipated technologies can blossom from seemingly unrelated developments. Solid-state quantum theory gave us the transistor; the economics of video-gaming gave us scaling in GPU production which, in turn, precipitated the achievability of modern AI. Our laboratory develops DNA microscopy -- a sequencing-based approach to spatial biology that extends from two-dimensional cell cultures to three-dimensional intact organisms.</p>
+                <p class="intro"><strong>U</strong>nanticipated technologies can blossom from seemingly unrelated developments. Solid-state quantum theory gave us the transistor; the economics of video-gaming gave us scaling in GPU production which, in turn, precipitated the achievability of modern AI. Our laboratory develops DNA microscopy—a sequencing-based approach to spatial biology that extends from two-dimensional cell cultures to three-dimensional intact organisms.</p>
                 
                 <p>DNA microscopy operates on a foundational principle: spatial relationships between biomolecules can be encoded into DNA sequences through controlled biochemical networks, then reconstructed computationally without optical systems. We have demonstrated this concept across multiple scales, from our initial work on planar cellular imaging to recent advances enabling volumetric reconstruction of intact organisms.</p>
                 
                 <h3>Volumetric DNA Microscopy</h3>
-                <p>Our 2025 work in <em>Nature Biotechnology</em> introduces volumetric DNA microscopy, which captures three-dimensional spatial transcriptomic information from intact specimens. The method establishes a distributed network of DNA barcodes throughout the specimen, with molecular proximities encoded through controlled biochemical reactions spanning multiple length scales -- anchored rolling circle amplification for short-range interactions (~1 μm) and in vitro transcription for longer-range diffusion (~10-50 μm).</p>
+                <p>Our 2025 work in <em>Nature Biotechnology</em> introduces volumetric DNA microscopy, which captures three-dimensional spatial transcriptomic information from intact specimens. The method establishes a distributed network of DNA barcodes throughout the specimen, with molecular proximities encoded through controlled biochemical reactions spanning multiple length scales—anchored rolling circle amplification for short-range interactions (~1 μm) and in vitro transcription for longer-range diffusion (~10-50 μm).</p>
                 
                 <figure class="volumetric">
                     <img src="zfish_gif.gif" alt="Animated 3‑D reconstruction of a 24‑hpf zebrafish embryo by volumetric DNA microscopy">
                     <figcaption>24‑hpf zebrafish embryo; ~7&nbsp;million RNA molecules mapped. Scale bar = 25 diffusion units.</figcaption>
                 </figure>
                 
-                <p>The approach uses geodesic spectral embedding algorithms to infer three-dimensional coordinates from the resulting proximity networks, achieving theoretical median resolution of approximately 1.5 μm (varying based on local UMI densities). This enables organism-scale spatial transcriptomics without prior knowledge of genome organization or spatial templates.</p>
+                <p>The approach uses geodesic spectral embedding algorithms to infer three-dimensional coordinates from the resulting proximity networks, achieving theoretical median resolution of approximately 1.5 μm (varying according to local UMI-densities). This enables organism-scale spatial transcriptomics without prior knowledge of genome organization or spatial templates.</p>
                 
                 <h3>Planar DNA Microscopy</h3>
                 <p>Take the following simple example. Let's say that you want to map the locations of every person on the surface of the earth. There are two ways you can imagine approaching this problem. One is, you can send up a satellite around the earth and take photographs. Two is, you can look at the Bluetooth pings between individuals' mobile phones. If you record enough of those pings, you can reconstruct everyone's relative positions without prior knowledge (or a map). DNA microscopy achieves this for biomolecules, instead of people. In short, in DNA microscopy, rather than using a large apparatus to zero in on specific locations within the sample, we deploy a massive mix of random, artificial DNA molecules, that give each biomolecule its own unique molecular identity (a molecular IP address).</p>
