@@ -453,6 +453,11 @@
             scroll-behavior: smooth;
         }
 
+        /* Fix for sticky header covering anchor targets */
+        section[id] {
+            scroll-margin-top: 150px;
+        }
+
         /* Selection styling */
         ::selection {
             background: var(--primary-color);
