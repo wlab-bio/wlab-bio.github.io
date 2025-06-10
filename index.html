@@ -304,14 +304,14 @@
                     <figcaption>24‑hpf zebrafish embryo; ~7&nbsp;million RNA molecules mapped. Scale bar = 25 diffusion units.</figcaption>
                 </figure>
                 
-                <p>The approach uses geodesic spectral embedding algorithms to infer three-dimensional coordinates from the resulting proximity networks, achieving theoretical median resolution of approximately 1.5 μm. This enables organism-scale spatial transcriptomics without prior knowledge of genome organization or spatial templates.</p>
+                <p> The approach uses geodesic spectral embedding algorithms to infer three-dimensional coordinates from the resulting proximity networks, achieving theoretical median resolution of approximately 1.5 μm, conditionalized on local UMI density. This enables organism-scale spatial transcriptomics without prior knowledge of genome organization or spatial templates.</p>
                 
                 <h3>Planar DNA Microscopy</h3>
                 <p>Take the following simple example. Let's say that you want to map the locations of every person on the surface of the earth. There are two ways you can imagine approaching this problem. One is, you can send up a satellite around the earth and take photographs. Two is, you can look at the Bluetooth pings between individuals' mobile phones. If you record enough of those pings, you can reconstruct everyone's relative positions without prior knowledge (or a map). DNA microscopy achieves this for biomolecules, instead of people. In short, in DNA microscopy, rather than using a large apparatus to zero in on specific locations within the sample, we deploy a massive mix of random, artificial DNA molecules, that give each biomolecule its own unique molecular identity (a molecular IP address).</p>
                 
                 <p>We then turn these molecules into a massive intercommunicating network that goes to work encoding molecular proximities across the specimen (in cells or tissue) into brand new DNA sequences. Reading these proximities out by high-throughput DNA sequencing, and applying advances in numerical computing, we can infer an image of the original sample (similar to the mobile phone positions in the original example).</p>
                 
-                <img src="cellcover.jpg" alt="DNA microscopy visualization" class="w-75">
+                <img src="cellcover.jpg" alt="DNA microscopy visualization" class="w-50">
                 
                 <p>In 2019, we demonstrated this for the first time in two dimensions, showcasing the potential of DNA microscopy in providing high-resolution, spatially resolved genomic data without the need for traditional optical microscopy.</p>
             </section>
