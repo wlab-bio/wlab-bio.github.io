@@ -135,8 +135,8 @@
             display: block;
         }
 
-        .w-33 {
-            width: 33%;
+        .w-25 {
+            width: 25%;
             margin: 20px auto;
             display: block;
         }
@@ -260,7 +260,11 @@
                 order: -1;
             }
 
-            .w-50, .w-33 {
+            .w-50, .w-25 {
+                width: 100%;
+            }
+
+            figure.volumetric {
                 width: 100%;
             }
             
@@ -301,7 +305,7 @@
                     <figcaption>24‑hpf zebrafish embryo; ~7&nbsp;million RNA molecules mapped. Scale bar = 25 diffusion units.</figcaption>
                 </figure>
                 
-                <p>The approach uses geodesic spectral embedding algorithms to infer three-dimensional coordinates from the resulting proximity networks, achieving theoretical median resolution of approximately 1.5 μm (varying according to local UMI-densities). This enables organism-scale spatial transcriptomics without prior knowledge of genome organization or spatial templates.</p>
+                <p>The approach uses geodesic spectral embedding algorithms to infer three-dimensional coordinates from the resulting proximity networks, achieving theoretical median resolution of approximately 1.5 μm. This enables organism-scale spatial transcriptomics without prior knowledge of genome organization or spatial templates.</p>
                 
                 <h3>Planar DNA Microscopy</h3>
                 <p>Take the following simple example. Let's say that you want to map the locations of every person on the surface of the earth. There are two ways you can imagine approaching this problem. One is, you can send up a satellite around the earth and take photographs. Two is, you can look at the Bluetooth pings between individuals' mobile phones. If you record enough of those pings, you can reconstruct everyone's relative positions without prior knowledge (or a map). DNA microscopy achieves this for biomolecules, instead of people. In short, in DNA microscopy, rather than using a large apparatus to zero in on specific locations within the sample, we deploy a massive mix of random, artificial DNA molecules, that give each biomolecule its own unique molecular identity (a molecular IP address).</p>
