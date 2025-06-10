@@ -429,14 +429,10 @@
             }
         }
 
-        /* Smooth scroll behavior */
+        /* Smooth scroll behavior with dynamic header offset */
         html {
             scroll-behavior: smooth;
-        }
-
-        /* Fix for sticky header covering anchor targets - using specific IDs and appropriate offset */
-        #research, #publications, #news {
-            scroll-margin-top: 100px;
+            scroll-padding-top: var(--scroll-padding, 100px);
         }
 
         /* Selection styling */
@@ -471,7 +467,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header id="main-header">
         <div class="container">
             <div class="header-content">
                 <img src="transp_logo.png" alt="Weinstein Lab Logo" class="logo">
@@ -599,6 +595,21 @@
         function capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
+
+        // Dynamic header height measurement for perfect scroll positioning
+        const setScrollPadding = () => {
+            const header = document.getElementById('main-header');
+            if (header) {
+                const headerHeight = header.offsetHeight;
+                document.documentElement.style.setProperty('--scroll-padding', headerHeight + 'px');
+            }
+        }
+
+        // Set the padding on initial load
+        setScrollPadding();
+
+        // Recalculate and set it whenever the window is resized
+        window.addEventListener('resize', setScrollPadding);
     </script>
 </body>
 </html>
