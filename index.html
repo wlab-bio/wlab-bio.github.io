@@ -20,362 +20,561 @@
     <!-- Google Fonts Integration -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Reset some default styles */
+        /* Reset and base styles */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary-color: #1f2937;
+            --accent-color: #10b981;
+            --text-color: #1f2937;
+            --text-light: #6b7280;
+            --bg-color: #ffffff;
+            --bg-secondary: #f9fafb;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
         body {
-            font-family: 'Open Sans', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            max-width: 1200px;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background: var(--bg-secondary);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Container and layout */
+        .container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 24px;
         }
 
+        /* Header improvements */
         header {
+            background: var(--bg-color);
+            padding: 32px 0;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 24px;
         }
 
-        h1, h2, h3 {
-            color: #2c3e50;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            font-size: 2em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #e1e1e1;
-            padding-bottom: 5px;
-        }
-
-        h3 {
-            font-size: 1.5em;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .intro {
-            font-style: italic;
-            color: #6a6a6a;
-            margin-bottom: 20px;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        nav ul li {
-            margin: 0;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #3498db;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #2c3e50;
-        }
-
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .main-content {
-            flex: 3;
-            min-width: 280px;
-        }
-
-        .sidebar {
-            flex: 1;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            min-width: 250px;
-        }
-
-        img {
-            max-width: 100%;
+        .logo {
+            max-width: 280px;
             height: auto;
-            display: block;
-            margin: 20px 0;
-            border-radius: 5px;
+            margin: 0 auto 16px;
+            filter: drop-shadow(var(--shadow-sm));
             transition: transform 0.3s ease;
         }
 
-        /* Width utility classes */
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 8px;
+            letter-spacing: -0.025em;
+            color: var(--secondary-color);
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin: 48px 0 24px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.375rem;
+            margin: 32px 0 16px;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* Navigation improvements */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            background-color: var(--bg-secondary);
+        }
+
+        /* Main content layout */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 48px;
+            margin: 48px 0;
+        }
+
+        .main-content {
+            background: var(--bg-color);
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .sidebar {
+            background: var(--bg-color);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        /* Typography improvements */
+        .intro {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 32px;
+            line-height: 1.8;
+            padding: 24px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        /* Image improvements */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        img:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
         .w-50 {
-            width: 50% !important;
-            margin: 20px auto !important;
+            width: 50%;
+            margin: 32px auto;
             display: block;
         }
 
         .w-25 {
-            width: 25% !important;
-            margin: 20px auto !important;
+            width: 25%;
+            margin: 32px auto;
             display: block;
         }
 
         /* Volumetric figure styling */
         .volumetric {
             text-align: center;
+            margin: 40px 0;
+            padding: 24px;
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
         }
 
         .volumetric img {
             width: 100%;
             margin: 0;
+            border-radius: 12px;
         }
 
         .volumetric figcaption {
             font-style: italic;
-            color: #666;
-            margin-top: 10px;
-            font-size: 0.9em;
+            color: var(--text-light);
+            margin-top: 16px;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        /* Logo styling */
-        .logo {
-            max-width: 250px;
-            height: auto;
-            margin: 0 auto 5px;
-            border-radius: 0; /* Remove border radius for logo */
-        }
-
-        .lab-title {
-            font-size: 1.2em;
-            font-weight: normal;
-            margin: 0;
-            color: #333;
-            font-family: 'Open Sans', Arial, sans-serif;
-        }
-
-        .lab-tagline {
-            font-size: 1em;
-            font-weight: normal;
-            margin: 0;
-            color: #333;
-            font-family: 'Open Sans', Arial, sans-serif;
-        }
-
+        /* Publication and news lists */
         .publication-list, .news-list {
-            list-style-type: none;
-            padding-left: 0;
+            list-style: none;
+            padding: 0;
         }
 
         .publication-list li, .news-list li {
-            margin-bottom: 10px;
-            line-height: 1.4;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            line-height: 1.6;
         }
 
-        .publication-list li a, .news-list li a {
-            color: #3498db;
+        .publication-list li:hover, .news-list li:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .publication-list a, .news-list a {
+            color: var(--primary-color);
             text-decoration: none;
+            font-weight: 500;
             transition: color 0.3s ease;
         }
 
-        .publication-list li a:hover, .news-list li a:hover {
-            color: #2c3e50;
+        .publication-list a:hover, .news-list a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
         }
 
+        /* Enhanced button styling */
         .more-button {
-            background-color: #3498db;
+            background: var(--primary-color);
             color: white;
             border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 10px 0;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 10px;
             cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            margin: 24px 0;
+            box-shadow: var(--shadow-sm);
         }
 
         .more-button:hover {
-            background-color: #2980b9;
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .more-button:active {
+            transform: translateY(-1px);
         }
 
         .hidden {
             display: none;
         }
 
-        .lab-photo {
-            width: 100%;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        /* Sidebar improvements */
+        .sidebar h3 {
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+            font-size: 1.25rem;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
         }
 
+        .sidebar p {
+            margin-bottom: 16px;
+        }
+
+        .lab-photo {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .lab-photo:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .sidebar a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* Footer improvements */
         footer {
+            background: var(--secondary-color);
+            color: white;
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #e1e1e1;
-            color: #7f8c8d;
+            padding: 48px 0;
+            margin-top: 64px;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+            opacity: 0.9;
         }
 
         footer a {
-            color: #3498db;
+            color: var(--accent-color);
             text-decoration: none;
+            font-weight: 500;
             transition: color 0.3s ease;
         }
 
         footer a:hover {
-            color: #2c3e50;
+            color: white;
+            text-decoration: underline;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
+        /* Responsive design improvements */
+        @media (max-width: 1024px) {
             .content {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+                gap: 32px;
             }
 
             .sidebar {
+                position: static;
                 order: -1;
+            }
+
+            .main-content {
+                padding: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            header {
+                padding: 24px 0;
+            }
+
+            .main-content, .sidebar {
+                padding: 24px;
+            }
+
+            nav ul {
+                gap: 16px;
+            }
+
+            nav a {
+                padding: 8px 16px;
+                font-size: 1rem;
             }
 
             .w-50, .w-25 {
                 width: 100%;
             }
 
-            figure.volumetric {
-                width: 100%;
+            h2 {
+                margin: 32px 0 20px;
             }
-            
-            .logo {
-                max-width: 280px;
+
+            .content {
+                margin: 32px 0;
+                gap: 24px;
+            }
+        }
+
+        /* Smooth scroll behavior with dynamic header offset */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--scroll-padding, 100px);
+        }
+
+        /* Selection styling */
+        ::selection {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Focus styles for accessibility */
+        button:focus,
+        a:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* Animation for content loading */
+        .main-content,
+        .sidebar {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="transp_logo.png" alt="Weinstein Lab Logo" class="logo">
-        <h1 class="lab-title">Weinstein Lab @ UChicago</h1>
-        <nav>
-            <ul>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#news">News & Media</a></li>
-                <!-- GitHub link removed from navigation bar -->
-            </ul>
-        </nav>
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <img src="transp_logo.png" alt="Weinstein Lab Logo" class="logo">
+                <h1 class="lab-title">Weinstein Lab @ UChicago</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#news">News & Media</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <div class="content">
-        <div class="main-content">
-            <section id="research">
-                <h2>Research</h2>
-                <p class="intro"><strong>U</strong>nanticipated technologies can blossom from seemingly unrelated developments. Solid-state quantum theory gave us the transistor; the economics of video-gaming gave us scaling in GPU production which, in turn, precipitated the achievability of modern AI. Our laboratory develops DNA microscopy -- a sequencing-based approach to spatial biology that extends from two-dimensional cell cultures to three-dimensional intact organisms.</p>
-                
-                <p>DNA microscopy operates on a foundational principle: spatial relationships between biomolecules can be encoded into DNA sequences through controlled biochemical networks, then reconstructed computationally without optical systems. We have demonstrated this concept across multiple scales, from our initial work on planar cellular imaging to recent advances enabling volumetric reconstruction of intact organisms.</p>
-                
-                <h3>Volumetric DNA Microscopy</h3>
-                <p>Our 2025 work in <em>Nature Biotechnology</em> introduces volumetric DNA microscopy, which captures three-dimensional spatial transcriptomic information from intact specimens. The method establishes a distributed network of DNA barcodes throughout the specimen, with molecular proximities encoded through controlled biochemical reactions spanning multiple length scales -- anchored rolling circle amplification for short-range interactions (~1 μm) and in vitro transcription for longer-range diffusion (~10-50 μm).</p>
-                
-                <figure class="volumetric">
-                    <img src="zfish_gif.gif" alt="Animated 3‑D reconstruction of a 24‑hpf zebrafish embryo by volumetric DNA microscopy">
-                    <figcaption>24‑hpf zebrafish embryo; ~7&nbsp;million RNA molecules mapped. Scale bar = 25 diffusion units.</figcaption>
-                </figure>
-                
-                <p> The approach uses geodesic spectral embedding algorithms to infer three-dimensional coordinates from the resulting proximity networks, achieving theoretical median resolution of approximately 1.5 μm, conditionalized on local UMI density. This enables organism-scale spatial transcriptomics without prior knowledge of genome organization or spatial templates.</p>
-                
-                <h3>Planar DNA Microscopy</h3>
-                <p>Take the following simple example. Let's say that you want to map the locations of every person on the surface of the earth. There are two ways you can imagine approaching this problem. One is, you can send up a satellite around the earth and take photographs. Two is, you can look at the Bluetooth pings between individuals' mobile phones. If you record enough of those pings, you can reconstruct everyone's relative positions without prior knowledge (or a map). DNA microscopy achieves this for biomolecules, instead of people. In short, in DNA microscopy, rather than using a large apparatus to zero in on specific locations within the sample, we deploy a massive mix of random, artificial DNA molecules, that give each biomolecule its own unique molecular identity (a molecular IP address).</p>
-                
-                <p>We then turn these molecules into a massive intercommunicating network that goes to work encoding molecular proximities across the specimen (in cells or tissue) into brand new DNA sequences. Reading these proximities out by high-throughput DNA sequencing, and applying advances in numerical computing, we can infer an image of the original sample (similar to the mobile phone positions in the original example).</p>
-                
-                <img src="cellcover.jpg" alt="DNA microscopy visualization" class="w-50">
-                
-                <p>In 2019, we demonstrated this for the first time in two dimensions, showcasing the potential of DNA microscopy in providing high-resolution, spatially resolved genomic data without the need for traditional optical microscopy.</p>
-            </section>
+    <div class="container">
+        <div class="content">
+            <div class="main-content">
+                <section id="research">
+                    <h2>Research</h2>
+                    <p class="intro"><strong>U</strong>nanticipated technologies can blossom from seemingly unrelated developments. Solid-state quantum theory gave us the transistor; the economics of video-gaming gave us scaling in GPU production which, in turn, precipitated the achievability of modern AI. Our laboratory develops DNA microscopy -- a sequencing-based approach to spatial biology that extends from two-dimensional cell cultures to three-dimensional intact organisms.</p>
+                    
+                    <p>DNA microscopy operates on a foundational principle: spatial relationships between biomolecules can be encoded into DNA sequences through controlled biochemical networks, then reconstructed computationally without optical systems. We have demonstrated this concept across multiple scales, from our initial work on planar cellular imaging to recent advances enabling volumetric reconstruction of intact organisms.</p>
+                    
+                    <h3>Volumetric DNA Microscopy</h3>
+                    <p>Our 2025 work in <em>Nature Biotechnology</em> introduces volumetric DNA microscopy, which captures three-dimensional spatial transcriptomic information from intact specimens. The method establishes a distributed network of DNA barcodes throughout the specimen, with molecular proximities encoded through controlled biochemical reactions spanning multiple length scales -- anchored rolling circle amplification for short-range interactions (~1 μm) and in vitro transcription for longer-range diffusion (~10-50 μm).</p>
+                    
+                    <figure class="volumetric">
+                        <img src="zfish_gif.gif" alt="Animated 3‑D reconstruction of a 24‑hpf zebrafish embryo by volumetric DNA microscopy">
+                        <figcaption>24‑hpf zebrafish embryo; ~7&nbsp;million RNA molecules mapped. Scale bar = 25 diffusion units.</figcaption>
+                    </figure>
+                    
+                    <p> The approach uses geodesic spectral embedding algorithms to infer three-dimensional coordinates from the resulting proximity networks, achieving theoretical median resolution of approximately 1.5 μm, conditionalized on local UMI density. This enables organism-scale spatial transcriptomics without prior knowledge of genome organization or spatial templates.</p>
+                    
+                    <h3>Planar DNA Microscopy</h3>
+                    <p>Take the following simple example. Let's say that you want to map the locations of every person on the surface of the earth. There are two ways you can imagine approaching this problem. One is, you can send up a satellite around the earth and take photographs. Two is, you can look at the Bluetooth pings between individuals' mobile phones. If you record enough of those pings, you can reconstruct everyone's relative positions without prior knowledge (or a map). DNA microscopy achieves this for biomolecules, instead of people. In short, in DNA microscopy, rather than using a large apparatus to zero in on specific locations within the sample, we deploy a massive mix of random, artificial DNA molecules, that give each biomolecule its own unique molecular identity (a molecular IP address).</p>
+                    
+                    <p>We then turn these molecules into a massive intercommunicating network that goes to work encoding molecular proximities across the specimen (in cells or tissue) into brand new DNA sequences. Reading these proximities out by high-throughput DNA sequencing, and applying advances in numerical computing, we can infer an image of the original sample (similar to the mobile phone positions in the original example).</p>
+                    
+                    <img src="cellcover.jpg" alt="DNA microscopy visualization" class="w-50">
+                    
+                    <p>In 2019, we demonstrated this for the first time in two dimensions, showcasing the potential of DNA microscopy in providing high-resolution, spatially resolved genomic data without the need for traditional optical microscopy.</p>
+                </section>
 
-            <section id="publications">
-                <h2>Publications</h2>
-                <ul class="publication-list">
-                    <li>Qian, N., Weinstein, J.A., <em>et al.</em> "Spatial transcriptomic imaging of an intact
-                        organism using volumetric DNA microscopy." <strong><em>Nat Biotechnol</em></strong> (2025).
-                        (<a href="https://doi.org/10.1038/s41587-025-02613-z" target="_blank" rel="noopener">paper</a>,
-                        <a href="https://doi.org/10.1101/2023.08.11.553025" target="_blank" rel="noopener">pre‑print</a>)</li>
-                    <li>Weinstein JA, Regev A, Zhang F. "DNA microscopy: Optics-free spatio-genetic imaging by a stand-alone chemical reaction." <em><strong>Cell</strong></em>. 2019 Jun 27. (<a href="https://www.cell.com/cell/fulltext/S0092-8674(19)30547-1" target="_blank" rel="noopener">paper</a>, <a href="https://www.biorxiv.org/content/10.1101/471219v1" target="_blank" rel="noopener">pre-print</a>)</li>
-                    <li>Vollmers C, Sit RV, Weinstein JA, Dekker CL, Quake SR. "Genetic measurement of memory B-cell recall using antibody repertoire sequencing." <i><strong>Proc Natl Acad Sci USA</strong></i>. 2013 Jul 29. (<a href="https://www.pnas.org/content/110/33/13463" target="_blank" rel="noopener">paper</a>)</li>
-                </ul>
-                <button class="more-button" onclick="toggleMore('publications')" aria-expanded="false">More Publications</button>
-                <ul id="more-publications" class="publication-list hidden">
-                    <li>Hsu PD, Scott DA, Weinstein JA, et al. "DNA targeting specificity of RNA-guided Cas9 nucleases." <i><strong>Nat Biotechnol</strong></i>. 2013 Jul 21. (<a href="https://www.nature.com/articles/nbt.2647" target="_blank" rel="noopener">paper</a>)</li>
-                    <li>Weinstein JA, Zeng X, Chien YC, Quake SR. "Correlation of gene expression and genome mutation in single B-cells." <i><strong>PLoS ONE</strong></i>. 2013 Jun 28. (<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0067624" target="_blank" rel="noopener">paper</a>)</li>
-                    <li>Jiang N, He J, Weinstein JA, et al. "Lineage structure of the human antibody repertoire in response to influenza vaccination." <i><strong>Sci Transl Med</strong></i>. 2013 Feb 6. (<a href="https://stm.sciencemag.org/content/5/171/171ra19.long" target="_blank" rel="noopener">paper</a>)</li>
-                    <li>Jiang N, Weinstein JA, et al. "Determinism and stochasticity during maturation of the zebrafish antibody repertoire." <i><strong>Proc Natl Acad Sci USA</strong></i>. 2011 Mar 29. (<a href="http://www.pnas.org/content/108/13/5348" target="_blank" rel="noopener">paper</a>)</li>
-                    <li>Weinstein JA, Jiang N, et al. "High-throughput sequencing of the zebrafish antibody repertoire." <i><strong>Science</strong></i>. 2009 May 8. (<a href="https://science.sciencemag.org/content/324/5928/807.long" target="_blank" rel="noopener">paper</a>)</li>
-                </ul>
-            </section>
+                <section id="publications">
+                    <h2>Publications</h2>
+                    <ul class="publication-list">
+                        <li>Qian, N., Weinstein, J.A., <em>et al.</em> "Spatial transcriptomic imaging of an intact
+                            organism using volumetric DNA microscopy." <strong><em>Nat Biotechnol</em></strong> (2025).
+                            (<a href="https://doi.org/10.1038/s41587-025-02613-z" target="_blank" rel="noopener">paper</a>,
+                            <a href="https://doi.org/10.1101/2023.08.11.553025" target="_blank" rel="noopener">pre‑print</a>)</li>
+                        <li>Weinstein JA, Regev A, Zhang F. "DNA microscopy: Optics-free spatio-genetic imaging by a stand-alone chemical reaction." <em><strong>Cell</strong></em>. 2019 Jun 27. (<a href="https://www.cell.com/cell/fulltext/S0092-8674(19)30547-1" target="_blank" rel="noopener">paper</a>, <a href="https://www.biorxiv.org/content/10.1101/471219v1" target="_blank" rel="noopener">pre-print</a>)</li>
+                        <li>Vollmers C, Sit RV, Weinstein JA, Dekker CL, Quake SR. "Genetic measurement of memory B-cell recall using antibody repertoire sequencing." <i><strong>Proc Natl Acad Sci USA</strong></i>. 2013 Jul 29. (<a href="https://www.pnas.org/content/110/33/13463" target="_blank" rel="noopener">paper</a>)</li>
+                    </ul>
+                    <button class="more-button" onclick="toggleMore('publications')" aria-expanded="false">More Publications</button>
+                    <ul id="more-publications" class="publication-list hidden">
+                        <li>Hsu PD, Scott DA, Weinstein JA, et al. "DNA targeting specificity of RNA-guided Cas9 nucleases." <i><strong>Nat Biotechnol</strong></i>. 2013 Jul 21. (<a href="https://www.nature.com/articles/nbt.2647" target="_blank" rel="noopener">paper</a>)</li>
+                        <li>Weinstein JA, Zeng X, Chien YC, Quake SR. "Correlation of gene expression and genome mutation in single B-cells." <i><strong>PLoS ONE</strong></i>. 2013 Jun 28. (<a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0067624" target="_blank" rel="noopener">paper</a>)</li>
+                        <li>Jiang N, He J, Weinstein JA, et al. "Lineage structure of the human antibody repertoire in response to influenza vaccination." <i><strong>Sci Transl Med</strong></i>. 2013 Feb 6. (<a href="https://stm.sciencemag.org/content/5/171/171ra19.long" target="_blank" rel="noopener">paper</a>)</li>
+                        <li>Jiang N, Weinstein JA, et al. "Determinism and stochasticity during maturation of the zebrafish antibody repertoire." <i><strong>Proc Natl Acad Sci USA</strong></i>. 2011 Mar 29. (<a href="http://www.pnas.org/content/108/13/5348" target="_blank" rel="noopener">paper</a>)</li>
+                        <li>Weinstein JA, Jiang N, et al. "High-throughput sequencing of the zebrafish antibody repertoire." <i><strong>Science</strong></i>. 2009 May 8. (<a href="https://science.sciencemag.org/content/324/5928/807.long" target="_blank" rel="noopener">paper</a>)</li>
+                    </ul>
+                </section>
 
-            <section id="news">
-                <h2>News & Media</h2>
-                <ul class="news-list">
-                    <li><a href="https://www.nature.com/articles/s41587-025-02640-w" target="_blank" rel="noopener">Volumetric imaging using a distributed molecular network (March 27, 2025)</a></li>
-                    <li><a href="https://biologicalsciences.uchicago.edu/news/dna-microscope-creates-3d-images-organisms-inside-out" target="_blank" rel="noopener">DNA microscope creates 3D images of organisms from the inside out (March 27, 2025)</a></li>
-                    <li><a href="https://www.damonrunyon.org/news/entries/6071" target="_blank" rel="noopener">2021 Damon Runyon Innovation Award Announcement (January 11, 2021)</a></li>
-                    <li><a href="https://www.moore.org/article-detail?newsUrlName=gordon-and-betty-moore-foundation-announces-2020-moore-inventor-fellows" target="_blank" rel="noopener">2020 Moore Inventor Fellow Announcement (September 16, 2020)</a></li>
-                    <li><a href="https://www.discovermagazine.com/health/with-a-new-microscope-researchers-may-be-able-to-see-dna-activity" target="_blank" rel="noopener">Discover Magazine (December 21, 2019)</a> - #33 in "Top science stories of 2019"</li>
-                </ul>
-                <button class="more-button" onclick="toggleMore('news')" aria-expanded="false">More News</button>
-                <ul id="more-news" class="news-list hidden">
-                    <li><a href="https://www.nytimes.com/2019/06/20/science/microscopes-cell-biology-dna.html" target="_blank" rel="noopener">New York Times (June 20, 2019)</a> - "DNA Microscope Sees 'Through the Eyes of the Cell'"</li>
-                    <li><a href="https://www.hhmi.org/news/dna-microscopy-offers-entirely-new-way-to-image-cells" target="_blank" rel="noopener">HHMI News (June 20, 2019)</a> - "'DNA Microscopy' Offers Entirely New Way to Image Cells"</li>
-                    <li><a href="https://www.statnews.com/2019/06/20/dna-microscope-shows-cells-genetic-material" target="_blank" rel="noopener">STAT News (June 20, 2019)</a> - "A new 'DNA microscope' peers deep inside living cells"</li>
-                    <li><a href="https://www.youtube.com/watch?v=hrqU2RP_9rc" target="_blank" rel="noopener">Models, Inference, and Algorithms Seminar (February 2, 2019)</a> - "Optics-free spatio-genetic imaging with DNA microscopy"</li>
-                    <li><a href="https://directorsblog.nih.gov/2013/02/12/taking-a-snapshot-of-the-human-immune-system/" target="_blank" rel="noopener">NIH Director's Blog (February 12, 2013)</a> - "Taking a Snapshot of the Human Immune System"</li>
-                </ul>
-            </section>
+                <section id="news">
+                    <h2>News & Media</h2>
+                    <ul class="news-list">
+                        <li><a href="https://www.nature.com/articles/s41587-025-02640-w" target="_blank" rel="noopener">Volumetric imaging using a distributed molecular network (March 27, 2025)</a></li>
+                        <li><a href="https://biologicalsciences.uchicago.edu/news/dna-microscope-creates-3d-images-organisms-inside-out" target="_blank" rel="noopener">DNA microscope creates 3D images of organisms from the inside out (March 27, 2025)</a></li>
+                        <li><a href="https://www.damonrunyon.org/news/entries/6071" target="_blank" rel="noopener">2021 Damon Runyon Innovation Award Announcement (January 11, 2021)</a></li>
+                        <li><a href="https://www.moore.org/article-detail?newsUrlName=gordon-and-betty-moore-foundation-announces-2020-moore-inventor-fellows" target="_blank" rel="noopener">2020 Moore Inventor Fellow Announcement (September 16, 2020)</a></li>
+                        <li><a href="https://www.discovermagazine.com/health/with-a-new-microscope-researchers-may-be-able-to-see-dna-activity" target="_blank" rel="noopener">Discover Magazine (December 21, 2019)</a> - #33 in "Top science stories of 2019"</li>
+                    </ul>
+                    <button class="more-button" onclick="toggleMore('news')" aria-expanded="false">More News</button>
+                    <ul id="more-news" class="news-list hidden">
+                        <li><a href="https://www.nytimes.com/2019/06/20/science/microscopes-cell-biology-dna.html" target="_blank" rel="noopener">New York Times (June 20, 2019)</a> - "DNA Microscope Sees 'Through the Eyes of the Cell'"</li>
+                        <li><a href="https://www.hhmi.org/news/dna-microscopy-offers-entirely-new-way-to-image-cells" target="_blank" rel="noopener">HHMI News (June 20, 2019)</a> - "'DNA Microscopy' Offers Entirely New Way to Image Cells"</li>
+                        <li><a href="https://www.statnews.com/2019/06/20/dna-microscope-shows-cells-genetic-material" target="_blank" rel="noopener">STAT News (June 20, 2019)</a> - "A new 'DNA microscope' peers deep inside living cells"</li>
+                        <li><a href="https://www.youtube.com/watch?v=hrqU2RP_9rc" target="_blank" rel="noopener">Models, Inference, and Algorithms Seminar (February 2, 2019)</a> - "Optics-free spatio-genetic imaging with DNA microscopy"</li>
+                        <li><a href="https://directorsblog.nih.gov/2013/02/12/taking-a-snapshot-of-the-human-immune-system/" target="_blank" rel="noopener">NIH Director's Blog (February 12, 2013)</a> - "Taking a Snapshot of the Human Immune System"</li>
+                    </ul>
+                </section>
+            </div>
+
+            <aside class="sidebar">
+                <h3>Latest News</h3>
+                <p>Our research on volumetric DNA microscopy for three-dimensional spatial transcriptomics has been published in <em>Nature Biotechnology</em>. <a href="https://doi.org/10.1038/s41587-025-02613-z" target="_blank" rel="noopener">Read the paper</a></p>
+                
+                <img src="lab_chicago.jpg" alt="Weinstein Lab" class="lab-photo">
+                <img src="lab_noodles.jpg" alt="Lab Noodles" class="lab-photo">
+                
+                <h3>Contact Us</h3>
+                <p>We have open positions. <a href="mailto:jaweinst@uchicago.edu">Contact us!</a></p>
+                
+                <h3>Connect with Us</h3>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/jaweinst/" target="_blank" rel="noopener">@jaweinst</a></p>
+                <p>Bluesky: <a href="https://bsky.app/profile/jaweinst.bsky.social" target="_blank" rel="noopener">@jaweinst.bsky.social</a></p>
+                <p>Twitter/X: <a href="https://twitter.com/jaweinst" target="_blank" rel="noopener">@jaweinst</a></p>
+            </aside>
         </div>
-
-        <aside class="sidebar">
-            <h3>Latest News</h3>
-            <p>Our research on volumetric DNA microscopy for three-dimensional spatial transcriptomics has been published in <em>Nature Biotechnology</em>. <a href="https://doi.org/10.1038/s41587-025-02613-z" target="_blank" rel="noopener">Read the paper</a></p>
-            
-            <img src="lab_chicago.jpg" alt="Weinstein Lab" class="lab-photo">
-            <img src="lab_noodles.jpg" alt="Lab Noodles" class="lab-photo">
-            
-            <h3>Contact Us</h3>
-            <p>We have open positions. <a href="mailto:jaweinst@uchicago.edu">Contact us!</a></p>
-            
-            <h3>Connect with Us</h3>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/jaweinst/" target="_blank" rel="noopener">@jaweinst</a></p>
-            <p>Bluesky: <a href="https://bsky.app/profile/jaweinst.bsky.social" target="_blank" rel="noopener">@jaweinst.bsky.social</a></p>
-            <p>Twitter/X: <a href="https://twitter.com/jaweinst" target="_blank" rel="noopener">@jaweinst</a></p>
-        </aside>
     </div>
 
     <footer>
-        <p>&copy; 2025 Weinstein Lab at the University of Chicago</p>
-        <p><a href="https://github.com/wlab-bio" target="_blank" rel="noopener">GitHub</a></p>
+        <div class="container">
+            <p>&copy; 2025 Weinstein Lab at the University of Chicago</p>
+            <p><a href="https://github.com/wlab-bio" target="_blank" rel="noopener">GitHub</a></p>
+        </div>
     </footer>
 
     <script>
@@ -396,6 +595,21 @@
         function capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
+
+        // Dynamic header height measurement for perfect scroll positioning
+        const setScrollPadding = () => {
+            const header = document.getElementById('main-header');
+            if (header) {
+                const headerHeight = header.offsetHeight;
+                document.documentElement.style.setProperty('--scroll-padding', headerHeight + 'px');
+            }
+        }
+
+        // Set the padding on initial load
+        setScrollPadding();
+
+        // Recalculate and set it whenever the window is resized
+        window.addEventListener('resize', setScrollPadding);
     </script>
 </body>
 </html>
