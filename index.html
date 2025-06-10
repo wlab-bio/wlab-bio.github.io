@@ -605,11 +605,15 @@
             }
         }
 
-        // Set the padding on initial load
-        setScrollPadding();
+        // Set the padding after page is fully loaded and styled
+        document.addEventListener('DOMContentLoaded', setScrollPadding);
+        window.addEventListener('load', setScrollPadding);
 
-        // Recalculate and set it whenever the window is resized
+        // Recalculate when window is resized
         window.addEventListener('resize', setScrollPadding);
+
+        // Also recalculate after a short delay to catch any late layout changes
+        setTimeout(setScrollPadding, 100);
     </script>
 </body>
 </html>
