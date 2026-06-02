@@ -250,6 +250,38 @@
             font-size: 0.95rem;
             line-height: 1.6;
         }
+        /* Styling for the new xVDM figure */
+        .xvdm {
+            text-align: center;
+            margin: 40px auto; 
+            max-width: 50%; /* Restricts the overall width. Adjust this percentage or use a pixel value like 500px */
+        }
+        
+        .xvdm video,
+        .xvdm img {
+            width: 100%; 
+            height: auto; 
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto;
+            box-shadow: var(--shadow-sm); /* Optional: matches the styling of other images */
+        }
+        
+        .xvdm figcaption {
+            font-style: italic;
+            color: var(--text-light);
+            margin-top: 16px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Ensure it remains responsive on smaller screens */
+        @media (max-width: 768px) {
+            .xvdm {
+                max-width: 100%;
+            }
+        }
+        
         /* Publication and news lists */
         .publication-list, .news-list {
             list-style: none;
