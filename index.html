@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M5G3SGWCGV"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -17,7 +16,6 @@
           content="The Weinstein Lab develops volumetric and planar DNA microscopy -- optics-free, sequencing-based platforms that map 3D morphology, transcript identity and gene-expression patterns from single cells to whole organisms.">
     <meta name="keywords" content="Weinstein Lab, DNA Microscopy, volumetric DNA microscopy, spatial transcriptomics, University of Chicago, Genomics, Bioinformatics, optics-free imaging">
     
-    <!-- Google Fonts Integration -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -224,8 +222,8 @@
             margin: 32px auto;
             display: block;
         }
-    
-        /* Volumetric and xVDM figure styling */
+
+        /* Volumetric and xVDM figure styling combined */
         .volumetric, .xvdm {
             text-align: center;
             margin: 40px 0;
@@ -234,7 +232,7 @@
             border-radius: 16px;
             border: 1px solid var(--border-color);
         }
-        
+
         .volumetric img, .volumetric video,
         .xvdm img, .xvdm video {
             width: 100%;
@@ -242,31 +240,8 @@
             border-radius: 12px;
             display: block;
         }
-        
-        .volumetric figcaption, .xvdm figcaption {
-            font-style: italic;
-            color: var(--text-light);
-            margin-top: 16px;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        /* Styling for the new xVDM figure */
-        .xvdm {
-            text-align: center;
-            margin: 40px auto; 
-            max-width: 50%; /* Restricts the overall width. Adjust this percentage or use a pixel value like 500px */
-        }
-        
-        .xvdm video,
-        .xvdm img {
-            width: 100%; 
-            height: auto; 
-            border-radius: 12px;
-            display: block;
-            margin: 0 auto;
-            box-shadow: var(--shadow-sm); /* Optional: matches the styling of other images */
-        }
-        
+
+        .volumetric figcaption, 
         .xvdm figcaption {
             font-style: italic;
             color: var(--text-light);
@@ -274,14 +249,7 @@
             font-size: 0.95rem;
             line-height: 1.6;
         }
-        
-        /* Ensure it remains responsive on smaller screens */
-        @media (max-width: 768px) {
-            .xvdm {
-                max-width: 100%;
-            }
-        }
-        
+
         /* Publication and news lists */
         .publication-list, .news-list {
             list-style: none;
