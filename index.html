@@ -497,13 +497,81 @@
             text-decoration: underline;
         }
 
+        /* Research-tool entry point */
+        .portal-entry {
+            margin-top: 64px;
+            padding: 34px 0;
+            color: white;
+            background: #111827;
+            border-bottom: 1px solid #374151;
+        }
+
+        .portal-entry-inner {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .portal-entry .portal-kicker {
+            margin: 0 0 5px;
+            color: #93c5fd;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .portal-entry h2 {
+            margin: 0 0 7px;
+            padding: 0;
+            color: white;
+            font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+        }
+
+        .portal-entry h2::after {
+            display: none;
+        }
+
+        .portal-entry p {
+            max-width: 760px;
+            margin: 0;
+            color: #cbd5e1;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        .portal-entry-link {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 17px;
+            border: 1px solid #60a5fa;
+            border-radius: 8px;
+            color: white;
+            background: #2563eb;
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 700;
+            white-space: nowrap;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .portal-entry-link:hover {
+            color: white;
+            background: #1d4ed8;
+            border-color: #93c5fd;
+        }
+
         /* Footer improvements */
         footer {
             background: var(--secondary-color);
             color: white;
             text-align: center;
             padding: 48px 0;
-            margin-top: 64px;
+            margin-top: 0;
         }
 
         footer p {
@@ -641,6 +709,20 @@
             .content {
                 margin: 32px 0;
                 gap: 24px;
+            }
+
+            .portal-entry {
+                margin-top: 40px;
+                padding: 28px 0;
+            }
+
+            .portal-entry-inner {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .portal-entry-link {
+                width: 100%;
             }
         }
 
@@ -827,6 +909,17 @@
             </aside>
         </div>
     </div>
+
+    <section class="portal-entry" aria-labelledby="portal-entry-title">
+        <div class="container portal-entry-inner">
+            <div>
+                <p class="portal-kicker">Interactive research tool</p>
+                <h2 id="portal-entry-title">Explore the xVDM Portal</h2>
+                <p>View a curated simulated reconstruction in 3D, inspect molecular context and review STAR-backed gene annotations.</p>
+            </div>
+            <a class="portal-entry-link" href="/xvdm-portal/">Open the portal <span aria-hidden="true">→</span></a>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
