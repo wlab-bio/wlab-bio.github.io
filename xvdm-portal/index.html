@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>xVDM Portal | Weinstein Lab</title>
-    <meta name="description" content="Explore a curated, STAR-annotated xVDM reconstruction and request access to the Weinstein Lab xVDM browser portal.">
+    <meta name="description" content="Access information for the Weinstein Lab xVDM browser portal, running on a simulated demonstration dataset.">
     <link rel="canonical" href="https://wlab.bio/xvdm-portal/">
     <link rel="icon" href="../favicon.png" type="image/png" sizes="512x512">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -25,7 +25,6 @@
             --surface: #ffffff;
             --surface-soft: #f7f9fc;
             --line: #e2e8f0;
-            --shadow: 0 18px 48px rgb(15 23 42 / 0.10);
         }
 
         html {
@@ -38,7 +37,8 @@
             color: var(--ink);
             background: var(--surface);
             font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            line-height: 1.65;
+            font-size: 1rem;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -47,22 +47,22 @@
         }
 
         a:focus-visible {
-            outline: 3px solid rgb(37 99 235 / 0.35);
+            outline: 2px solid rgb(37 99 235 / 0.5);
             outline-offset: 3px;
         }
 
         .container {
-            width: min(1160px, calc(100% - 40px));
+            width: min(1080px, calc(100% - 40px));
             margin-inline: auto;
         }
 
         .site-header {
             border-bottom: 1px solid var(--line);
-            background: rgb(255 255 255 / 0.94);
+            background: var(--surface);
         }
 
         .header-inner {
-            min-height: 76px;
+            min-height: 64px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -72,54 +72,54 @@
         .brand {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             color: var(--ink);
             text-decoration: none;
-            font-weight: 700;
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
         .brand img {
-            width: 48px;
-            height: 48px;
+            width: 34px;
+            height: 34px;
             object-fit: contain;
         }
 
         .header-nav {
             display: flex;
             align-items: center;
-            gap: 22px;
-            font-size: 0.92rem;
-            font-weight: 600;
+            gap: 20px;
+            font-size: 0.88rem;
+            font-weight: 500;
         }
 
         .header-nav a {
+            color: var(--muted);
             text-decoration: none;
         }
 
         .header-nav a:hover {
-            color: var(--blue);
+            color: var(--ink);
         }
 
         .hero {
-            padding: 72px 0 64px;
-            background:
-                radial-gradient(circle at 15% 10%, rgb(37 99 235 / 0.11), transparent 32%),
-                linear-gradient(180deg, #fbfdff 0%, #ffffff 75%);
+            padding: 56px 0 48px;
+            background: var(--surface);
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: minmax(0, 0.94fr) minmax(420px, 1.06fr);
+            grid-template-columns: minmax(0, 1fr) minmax(380px, 1fr);
             align-items: center;
-            gap: 56px;
+            gap: 48px;
         }
 
         .eyebrow {
-            margin: 0 0 14px;
-            color: var(--blue-dark);
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.11em;
+            margin: 0 0 12px;
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
         }
 
@@ -128,44 +128,44 @@
         }
 
         h1 {
-            max-width: 780px;
-            margin-bottom: 22px;
-            font-size: clamp(2.5rem, 6vw, 4.8rem);
-            line-height: 0.99;
-            letter-spacing: -0.052em;
+            max-width: 620px;
+            margin-bottom: 16px;
+            font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
         .lede {
-            max-width: 700px;
-            margin-bottom: 30px;
+            max-width: 560px;
+            margin-bottom: 24px;
             color: var(--muted);
-            font-size: clamp(1.02rem, 2vw, 1.18rem);
+            font-size: 1rem;
         }
 
         .actions {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
         }
 
         .button {
-            min-height: 46px;
+            min-height: 40px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 11px 18px;
+            padding: 9px 16px;
             border: 1px solid var(--blue);
-            border-radius: 9px;
+            border-radius: 6px;
             color: #ffffff;
             background: var(--blue);
             text-decoration: none;
-            font-size: 0.94rem;
-            font-weight: 700;
-            transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
         }
 
         .button:hover {
-            transform: translateY(-1px);
             border-color: var(--blue-dark);
             background: var(--blue-dark);
         }
@@ -178,24 +178,23 @@
 
         .button.secondary:hover {
             color: var(--blue-dark);
-            border-color: #bfdbfe;
+            border-color: #cbd5e1;
             background: var(--blue-soft);
         }
 
         .assurance {
-            margin: 20px 0 0;
+            margin: 16px 0 0;
             color: var(--muted);
-            font-size: 0.84rem;
+            font-size: 0.82rem;
         }
 
         .hero-figure {
             margin: 0;
-            padding: 12px;
+            padding: 10px;
             overflow: hidden;
-            border: 1px solid #1f2937;
-            border-radius: 16px;
-            background: #070b12;
-            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: var(--surface-soft);
         }
 
         .hero-figure img {
@@ -204,14 +203,14 @@
             height: auto;
             aspect-ratio: 4 / 3;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 6px;
         }
 
         .hero-figure figcaption {
-            padding: 12px 4px 2px;
-            color: #cbd5e1;
-            font-size: 0.8rem;
-            line-height: 1.45;
+            padding: 10px 2px 2px;
+            color: var(--muted);
+            font-size: 0.78rem;
+            line-height: 1.5;
         }
 
         .access-band {
@@ -223,19 +222,14 @@
             display: grid;
             grid-template-columns: auto 1fr auto;
             align-items: center;
-            gap: 18px;
-            padding-block: 24px;
+            gap: 14px;
+            padding-block: 18px;
         }
 
         .access-mark {
-            width: 42px;
-            height: 42px;
-            display: grid;
-            place-items: center;
-            border-radius: 50%;
-            color: #ffffff;
-            background: var(--green);
-            font-weight: 800;
+            color: var(--green);
+            font-size: 0.95rem;
+            line-height: 1;
         }
 
         .access-copy strong,
@@ -243,72 +237,77 @@
             display: block;
         }
 
+        .access-copy strong {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
         .access-copy span {
             color: var(--muted);
-            font-size: 0.9rem;
+            font-size: 0.86rem;
         }
 
         .section {
-            padding: 72px 0;
+            padding: 56px 0;
         }
 
         .section-heading {
-            max-width: 720px;
-            margin-bottom: 32px;
+            max-width: 640px;
+            margin-bottom: 26px;
         }
 
         h2 {
-            margin-bottom: 12px;
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            line-height: 1.12;
-            letter-spacing: -0.035em;
+            margin-bottom: 10px;
+            font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+            font-weight: 600;
+            line-height: 1.25;
+            letter-spacing: -0.015em;
         }
 
         .section-heading p {
             margin-bottom: 0;
             color: var(--muted);
+            font-size: 0.95rem;
         }
 
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 18px;
+            gap: 16px;
         }
 
         .feature {
-            padding: 26px;
+            padding: 22px;
             border: 1px solid var(--line);
-            border-radius: 12px;
+            border-radius: 8px;
             background: var(--surface);
         }
 
-        .feature-number {
+        .feature-label {
             display: block;
-            margin-bottom: 20px;
-            color: var(--blue);
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.09em;
+            margin-bottom: 14px;
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
         }
 
         h3 {
-            margin-bottom: 9px;
-            font-size: 1.08rem;
+            margin-bottom: 6px;
+            font-size: 0.98rem;
+            font-weight: 600;
         }
 
         .feature p {
             margin-bottom: 0;
             color: var(--muted);
-            font-size: 0.92rem;
+            font-size: 0.9rem;
         }
 
         .steps {
-            background: var(--ink);
-            color: #ffffff;
-        }
-
-        .steps .section-heading p {
-            color: #cbd5e1;
+            border-top: 1px solid var(--line);
+            background: var(--surface-soft);
         }
 
         .step-list {
@@ -316,31 +315,34 @@
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1px;
             overflow: hidden;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            background: #334155;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--line);
         }
 
         .step {
-            padding: 28px;
-            background: #1e293b;
+            padding: 22px;
+            background: var(--surface);
         }
 
         .step strong {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
         .step span {
-            color: #cbd5e1;
+            color: var(--muted);
             font-size: 0.9rem;
         }
 
         footer {
-            padding: 32px 0;
+            padding: 26px 0;
+            border-top: 1px solid var(--line);
             color: var(--muted);
             background: var(--surface);
-            font-size: 0.86rem;
+            font-size: 0.84rem;
         }
 
         .footer-inner {
@@ -355,23 +357,27 @@
         }
 
         .footer-inner a {
-            color: var(--blue-dark);
-            font-weight: 600;
+            color: var(--muted);
+            font-weight: 500;
             text-decoration: none;
+        }
+
+        .footer-inner a:hover {
+            color: var(--blue-dark);
         }
 
         @media (max-width: 880px) {
             .hero {
-                padding-top: 52px;
+                padding-top: 44px;
             }
 
             .hero-grid {
                 grid-template-columns: minmax(0, 1fr);
-                gap: 36px;
+                gap: 32px;
             }
 
             .hero-figure {
-                max-width: 700px;
+                max-width: 640px;
             }
 
             .feature-grid,
@@ -382,15 +388,15 @@
 
         @media (max-width: 620px) {
             .container {
-                width: min(100% - 28px, 1160px);
+                width: min(100% - 28px, 1080px);
             }
 
             .header-inner {
-                min-height: 68px;
+                min-height: 60px;
             }
 
             .brand span {
-                font-size: 0.9rem;
+                font-size: 0.88rem;
             }
 
             .header-nav {
@@ -398,11 +404,11 @@
             }
 
             .hero {
-                padding: 42px 0 44px;
+                padding: 36px 0 36px;
             }
 
             h1 {
-                font-size: clamp(2.25rem, 12vw, 3rem);
+                font-size: clamp(1.6rem, 7vw, 2rem);
             }
 
             .actions,
@@ -419,7 +425,7 @@
             }
 
             .section {
-                padding: 54px 0;
+                padding: 44px 0;
             }
 
             .footer-inner {
@@ -440,7 +446,7 @@
     <header class="site-header">
         <div class="container header-inner">
             <a class="brand" href="/" aria-label="Weinstein Lab home">
-                <img src="../transp_logo.png" alt="" width="48" height="48">
+                <img src="../transp_logo.png" alt="" width="34" height="34">
                 <span>Weinstein Lab @ UChicago</span>
             </a>
             <nav class="header-nav" aria-label="Portal navigation">
@@ -454,19 +460,19 @@
         <section class="hero" aria-labelledby="page-title">
             <div class="container hero-grid">
                 <div>
-                    <p class="eyebrow">Interactive analysis preview</p>
-                    <h1 id="page-title">Sequence data, reconstructed in space.</h1>
-                    <p class="lede">Explore a curated xVDM demonstration from simulated DNA reads through 3D reconstruction, molecular context and STAR-backed gene annotation.</p>
+                    <p class="eyebrow">Demonstration dataset</p>
+                    <h1 id="page-title">xVDM reconstruction browser</h1>
+                    <p class="lede">A demonstration instance of the xVDM browser, running on a simulated dataset. It covers the same stages as a full analysis: reconstruction from sequencing reads, molecular context, and gene annotation.</p>
                     <div class="actions">
-                        <a class="button" href="https://xvdm-demo-632908146873.us-central1.run.app/">Open simulated-data portal</a>
+                        <a class="button" href="https://xvdm-demo-632908146873.us-central1.run.app/">Open the portal</a>
                         <a class="button secondary" href="https://groups.google.com/g/xvdm-portal-access/about">Request access</a>
                     </div>
-                    <p class="assurance">Google authentication is required. The portal never asks for or stores a separate password.</p>
+                    <p class="assurance">Sign-in uses Google authentication. The portal does not ask for or store a separate password.</p>
                 </div>
 
                 <figure class="hero-figure">
                     <img src="../four_embryos_fallback.jpg" alt="Four xVDM zebrafish embryo reconstructions shown alongside bright-field images" width="2136" height="1600">
-                    <figcaption>xVDM reconstructions from current Weinstein Lab research. The browser demonstration uses a separate, fully simulated validation dataset.</figcaption>
+                    <figcaption>xVDM reconstructions from ongoing Weinstein Lab work. The demonstration uses a separate simulated dataset.</figcaption>
                 </figure>
             </div>
         </section>
@@ -475,8 +481,8 @@
             <div class="container access-grid">
                 <span class="access-mark" aria-hidden="true">✓</span>
                 <div class="access-copy">
-                    <strong>Curated demonstration, isolated from production data</strong>
-                    <span>Access is approved by the Weinstein Lab and limited to the sealed simulated dataset.</span>
+                    <strong>Separate from production data</strong>
+                    <span>Access is approved by the Weinstein Lab and limited to the simulated dataset.</span>
                 </div>
                 <a class="button secondary" href="https://groups.google.com/g/xvdm-portal-access/about">Ask to join</a>
             </div>
@@ -485,26 +491,26 @@
         <section class="section" aria-labelledby="explore-title">
             <div class="container">
                 <div class="section-heading">
-                    <p class="eyebrow">Inside the demonstration</p>
-                    <h2 id="explore-title">Follow the analysis end to end.</h2>
-                    <p>The sample was constructed to exercise the same browser surfaces used for an xVDM reconstruction while keeping the public-facing preview separate from submitted experiments.</p>
+                    <p class="eyebrow">Contents</p>
+                    <h2 id="explore-title">What the demonstration includes</h2>
+                    <p>The sample exercises the same browser views used for an xVDM reconstruction, while keeping the public preview separate from submitted experiments.</p>
                 </div>
 
                 <div class="feature-grid">
                     <article class="feature">
-                        <span class="feature-number">01 / RECONSTRUCTION</span>
-                        <h3>Navigate the 3D node cloud</h3>
-                        <p>Rotate spatial views, select reconstructed nodes and inspect the inferred organization of the simulated specimen.</p>
+                        <span class="feature-label">Reconstruction</span>
+                        <h3>3D node cloud</h3>
+                        <p>Rotate the spatial view, select reconstructed nodes, and inspect the inferred organization of the simulated specimen.</p>
                     </article>
                     <article class="feature">
-                        <span class="feature-number">02 / CONTEXT</span>
-                        <h3>Inspect molecular neighborhoods</h3>
-                        <p>Move from a selected node to its local UEI relationships, sub-consensuses and molecular annotations.</p>
+                        <span class="feature-label">Context</span>
+                        <h3>Molecular neighborhoods</h3>
+                        <p>From a selected node, view its local UEI relationships, sub-consensuses, and molecular annotations.</p>
                     </article>
                     <article class="feature">
-                        <span class="feature-number">03 / ANNOTATION</span>
-                        <h3>Review STAR-backed mappings</h3>
-                        <p>Examine gene alignment evidence produced with the validated zebrafish reference and extended rRNA annotation.</p>
+                        <span class="feature-label">Annotation</span>
+                        <h3>Gene mappings</h3>
+                        <p>Review alignment evidence produced with STAR against the validated zebrafish reference and extended rRNA annotation.</p>
                     </article>
                 </div>
             </div>
@@ -514,8 +520,8 @@
             <div class="container">
                 <div class="section-heading">
                     <p class="eyebrow">Access</p>
-                    <h2 id="access-title">One request, then Google sign-in.</h2>
-                    <p>The access group is reviewed by the Weinstein Lab. Approved members use their own Google credentials; no shared account is distributed.</p>
+                    <h2 id="access-title">Requesting access</h2>
+                    <p>Membership in the access group is reviewed by the Weinstein Lab. Approved members sign in with their own Google account; no shared account is issued.</p>
                 </div>
 
                 <div class="step-list">
@@ -524,12 +530,12 @@
                         <span>Open the access group and select “Ask to join.”</span>
                     </div>
                     <div class="step">
-                        <strong>2. Await approval</strong>
+                        <strong>2. Wait for approval</strong>
                         <span>The request is reviewed by the portal owner.</span>
                     </div>
                     <div class="step">
                         <strong>3. Open the portal</strong>
-                        <span>Return here and enter the demonstration with Google sign-in.</span>
+                        <span>Return to this page and sign in with Google.</span>
                     </div>
                 </div>
             </div>
