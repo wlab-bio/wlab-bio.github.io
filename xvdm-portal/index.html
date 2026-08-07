@@ -107,11 +107,8 @@
             background: var(--surface);
         }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(380px, 1fr);
-            align-items: center;
-            gap: 48px;
+        .hero-inner {
+            max-width: 660px;
         }
 
         .eyebrow {
@@ -186,31 +183,6 @@
             margin: 16px 0 0;
             color: var(--muted);
             font-size: 0.82rem;
-        }
-
-        .hero-figure {
-            margin: 0;
-            padding: 10px;
-            overflow: hidden;
-            border: 1px solid var(--line);
-            border-radius: 10px;
-            background: var(--surface-soft);
-        }
-
-        .hero-figure img {
-            display: block;
-            width: 100%;
-            height: auto;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-            border-radius: 6px;
-        }
-
-        .hero-figure figcaption {
-            padding: 10px 2px 2px;
-            color: var(--muted);
-            font-size: 0.78rem;
-            line-height: 1.5;
         }
 
         .access-band {
@@ -371,15 +343,6 @@
                 padding-top: 44px;
             }
 
-            .hero-grid {
-                grid-template-columns: minmax(0, 1fr);
-                gap: 32px;
-            }
-
-            .hero-figure {
-                max-width: 640px;
-            }
-
             .feature-grid,
             .step-list {
                 grid-template-columns: 1fr;
@@ -458,13 +421,13 @@
 
     <main>
         <section class="hero" aria-labelledby="page-title">
-            <div class="container hero-grid">
-                <div>
+            <div class="container">
+                <div class="hero-inner">
                     <p class="eyebrow">Demonstration dataset</p>
                     <h1 id="page-title">xVDM reconstruction browser</h1>
                     <p class="lede">A demonstration instance of the xVDM browser, running on a simulated dataset. It covers the same stages as a full analysis: reconstruction from sequencing reads, molecular context, and gene annotation.</p>
                     <div class="actions">
-                        <a class="button" href="https://xvdm-demo-632908146873.us-central1.run.app/">Open the portal</a>
+                        <a class="button" href="https://xvdm-demo-632908146873.us-central1.run.app/">Open the simulated-data portal</a>
                         <a class="button secondary" href="https://groups.google.com/g/xvdm-portal-access/about">Request access</a>
                     </div>
                     <p class="assurance">Sign-in uses Google authentication. The portal does not ask for or store a separate password.</p>
